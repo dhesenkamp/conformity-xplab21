@@ -16,11 +16,19 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
-            instructions,
-            forced_choice_2A,
+            //instructions,
+            issue_choice,
+            issue_rating,
+            moral_dilemma_instructions,
+            moral_dilemma,
+            moral_dilemma_rating,
+            understanding,
+            identity,
             post_test,
+            thank_participant,
             thanks,
         ],
+
         // Here, you can specify all information for the deployment
         deploy: {
             experimentID: "INSERT_A_NUMBER",
@@ -29,18 +37,21 @@ $("document").ready(function() {
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
             deployMethod: "debug",
-            contact_email: "YOUREMAIL@wherelifeisgreat.you",
+            contact_email: "dhesenkamp@uos.de",
             prolificURL: "https://app.prolific.ac/submissions/complete?cc=SAMPLE1234"
         },
+        
         // Here, you can specify how the progress bar should look like
+        
         progress_bar: {
             in: [
                 // list the view-names of the views for which you want a progress bar
-                forced_choice_2A.name,
+
             ],
              // Possible styles are "default", "separate" and "chunks"
             style: "separate",
             width: 100
         }
+        
     });
 });
