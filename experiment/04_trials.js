@@ -12,8 +12,6 @@ const social_issues = {
             option6: 'Fleischkonsum',
             option7: 'Bildung',
             option8: 'Abtreibung',
-
-            //response: 'NULL',
         },
     ],
 
@@ -98,3 +96,5 @@ const identity_check = {
         },
     ],
 };
+
+//magpie.trial_data.social_issues.response

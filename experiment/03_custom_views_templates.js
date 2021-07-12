@@ -15,6 +15,7 @@ const sentence_choice_custom = function(config, CT) {
         trials: config.trials,
         
         render: function (CT, magpie) {
+            //console.log(magpie.trial_data)
             $("main").html(`<div class='magpie-view'>
                 <h1 class='magpie-view-title'>${config.title}</h1>
 
