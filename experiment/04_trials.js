@@ -19,14 +19,14 @@ const social_issues = {
         {
             // array entries sorted like 'choice'
             statements: [
-                'Eine Benzinsteuer ist eine essentielle Maßnahme für die Rettung des Klimas.',
-                'Deutschland braucht eine Migrationsobergrenze von 300.000 Personen.',
+                'Zum Erreichen des 1,5° Grad Ziels müssen strengere Maßnahmen ergriffen werden.',
+                'In Deutschland muss es eine Migrationsobergrenze geben.',
                 'Eine Frauenquote in allen Institutionen ist essentiell für Gleichberechtigung.',
-                'Cannabis sollte für Erwachsene (18 J.) frei zugänglich sein.',
-                'Das Rentenalter sollte auf 69 Jahre angehoben werden.',
+                'Cannabis sollte für Erwachsene frei zugänglich sein.',
+                'Das Rentenalter soll angehoben werden.',
                 'Der Fleischkonsum muss deutlich reduziert werden, daher esse ich kein Fleisch.',
                 'G8 sollte in ganz Deutschland eingeführt werden.',
-                'Jede Frau sollte die Möglichkeit haben, ihr Kind bis zum 3. Monat abtreiben zu können.'
+                'Jede Frau sollte die Möglichkeit haben, ihr Kind bis zum 3. Schwangerschafts-Monat abtreiben zu können.'
             ],
         },
     ],
@@ -37,8 +37,8 @@ const dilemma = {
     choice: [
         {
             id: 1,
-            chunk1: '60% der Teilnehmer, die mit Ihnen in Hinsicht auf ',
-            chunk2: ' übereinstimmen, würden den Dieb laufen lassen.',
+            chunk1: 'Etwa 60% der Teilnehmer, die mit Ihnen in Hinsicht auf ',
+            chunk2: ' übereinstimmen, würden nichts tun und den Dieb laufen lassen.',
             chunk3: '',
             chunk4: '',
             option1: 'Definitiv würde ich die Polizei anrufen und den Dieb melden.',
@@ -51,7 +51,7 @@ const dilemma = {
         {
             id: 2,
             chunk1: '60% der Teilnehmer, die mit Ihnen in Hinsicht auf ',
-            chunk2: ' übereinstimmen, würden den Dieb bei der Polizei melden.',
+            chunk2: ' übereinstimmen, würden die Polizei anrufen und den Dieb melden.',
             chunk3: '',
             chunk4: '',
             option1: 'Definitiv würde ich die Polizei anrufen und den Dieb melden.',
@@ -64,9 +64,9 @@ const dilemma = {
         {
             id: 3,
             chunk1: '60% der Teilnehmer, die mit Ihnen in Hinsicht auf ',
-            chunk2: ' übereinstimmen, würden den Dieb laufen lassen.',
-            chunk3: '85% der Teilnehmer, die mit Ihnen in Hinsucht auf ',
-            chunk4: ' nicht übereinstimmen, würden den Dieb bei der Polizei melden.',
+            chunk2: ' übereinstimmen, würden nichts tun und den Dieb laufen lassen.',
+            chunk3: '85% der Teilnehmer, die Ihnen in Hinsicht auf ',
+            chunk4: ' widersprechen, würden die Polizei anrufen und den Dieb melden.',
             option1: 'Definitiv würde ich die Polizei anrufen und den Dieb melden.',
             option2: 'Höchstwahrscheinlich würde ich die Polizei anrufen und den Dieb melden.',
             option3: 'Vermutlich würde ich die Polizei anrufen und den Dieb melden.',
@@ -77,9 +77,9 @@ const dilemma = {
         {
             id: 4,
             chunk1: '60% der Teilnehmer, die mit Ihnen in Hinsicht auf ',
-            chunk2: ' übereinstimmen, würden den Dieb bei der Polizei melden.',
-            chunk3: '85% der Teilnehmer, die mit Ihnen in Hinsicht auf ',
-            chunk4: ' nicht übereinstimmen, würden den Dieb laufen lassen.',
+            chunk2: ' übereinstimmen, würden die Polizei anrufen und den Dieb melden.',
+            chunk3: '85% der Teilnehmer, die Ihnen in Hinsicht auf ',
+            chunk4: ' widersprechen, würden nichts tun und den Dieb laufen lassen.',
             option1: 'Definitiv würde ich die Polizei anrufen und den Dieb melden.',
             option2: 'Höchstwahrscheinlich würde ich die Polizei anrufen und den Dieb melden.',
             option3: 'Vermutlich würde ich die Polizei anrufen und den Dieb melden.',
@@ -91,7 +91,7 @@ const dilemma = {
 
     rating: [
         {
-            question: 'Angenommen, Sie entscheiden sich dafür die Polizei zu verständigen und den Dieb zu melden. Wie gut fühlen Sie sich mit dieser Entscheidung?',
+            question: 'Wie fühlen Sie sich mit Ihrer Entscheidung?',
             optionRight: 'Sehr gut',
             optionLeft: 'Sehr schlecht',
         },
@@ -101,11 +101,11 @@ const dilemma = {
 const understanding = {
     choice: [
         {
-            option1: 'Die Teilnehmer sollten das Experiment mit geschlossenen Augen absolvieren.',
-            option2: 'In dem Experiment nahmen die Teilnehmer Stellung zu einem moralischen Dilemma.',
-            option3: 'Wegen eines Computerfehlers konnten die Teilnehmer nicht richtig verteilt werden, um sich die Ausführungen der verschiedenen Handlungen vorzustellen.',
+            option1: 'Die Teilnehmer nahmen Stellung zu einem moralischen Dilemma.',
+            option2: 'Die Teilnehmer sollten das Experiment mit geschlossenen Augen absolvieren.',
+            option3: 'Die Teilnehmer mussten Haustiere nach Niedlichkeit bewerten.',
             option4: 'Die Daten aus den vorherigen Experiment wurden nicht gespeichert.',
-            expected: 'In dem Experiment nahmen die Teilnehmer Stellung zu einem moralischen Dilemma.',
+            expected: 'Die Teilnehmer nahmen Stellung zu einem moralischen Dilemma.',
         }
     ]
 };
@@ -134,6 +134,6 @@ const group_identity = {
             ],
             statement1: 'Ich würde mich als Teil der Gruppe der [ingroup] bezeichnen.',
             statement2: 'Ich würde mich als Teil der Gruppe der [outgroup] bezeichnen.',
-        },    
+        },
     ],
 };
