@@ -25,9 +25,9 @@ const intro = magpieViews.view_generator("intro", {
   text: `Vielen Dank, dass Sie an unserem Experiment teilnehmen.
             <br />
             <br />
-            Auf den nächsten Seiten werden Ihnen einige Fragen gestellt. Die Aufzeichnung 
-            der Antworten erfolgt vollständig anonymisiert, es können keine Rückschlüsse auf 
-            Ihre Person gezogen werden. Bitte antworten Sie ehrlich und wählen Sie die Aussagen, 
+            Auf den nächsten Seiten werden Ihnen einige Fragen gestellt. Die Aufzeichnung
+            der Antworten erfolgt vollständig anonymisiert, es können keine Rückschlüsse auf
+            Ihre Person gezogen werden. Bitte antworten Sie ehrlich und wählen Sie die Aussagen,
             die am besten Ihre Einstellung beschreiben.`,
   buttonText: 'Starten Sie das Experiment'
 });
@@ -68,7 +68,7 @@ const post_test = magpieViews.view_generator("post_test", {
 
 // Custom thank you screen with message
 const thank_participant = magpieViews.view_generator(
-  'instructions', 
+  'instructions',
   {
     trials: 1,
     name: 'thank_participant',
@@ -86,7 +86,7 @@ const thanks = magpieViews.view_generator(
   trials: 1,
   name: 'thanks',
   title: 'Thank you for taking part in this experiment!',
-  
+
   prolificConfirmText: 'Press the button'
   },
 );
@@ -124,8 +124,8 @@ const issue_choice = issue_choice_custom_view(
     trials: social_issues.choice.length,
     name: 'issue_choice',
     title: 'Themenwahl',
-    text: `Im Folgenden sind einige Themen aufgelistet, die von politischer und/oder 
-            sozialer Relevanz sind. Bitte wählen Sie das Thema aus, welches Ihnen 
+    text: `Im Folgenden sind einige Themen aufgelistet, die von politischer und/oder
+            sozialer Relevanz sind. Bitte wählen Sie das Thema aus, welches Ihnen
             am wichtigsten erscheint.`,
     data: social_issues.choice
   }
@@ -136,7 +136,7 @@ const issue_rating = issue_rating_custom_view(
     trials: social_issues.rating.length,
     name: 'issue_rating',
     title: 'Bewertung',
-    text: `Bitte bewerten Sie nun die folgende Aussage. Die Mitte der Skala bedeutet, 
+    text: `Bitte bewerten Sie nun die folgende Aussage. Die Mitte der Skala bedeutet,
             dass Sie neutral zu der Aussage eingestellt sind.`,
     data: social_issues.rating,
     optionLeft: 'Stimme gar nicht zu',
@@ -150,20 +150,18 @@ const dilemma_instructions = magpieViews.view_generator(
     trials: 1,
     name: 'instructions_moral_dilemma',
     title: 'Anweisungen',
-    text: `Dieses Experiment wird als Folgestudie zu einem ursprünglichen Paper durchgeführt. Das 
-            frühere Paper beschäftigt sich zum Einen mit den Handlungen, die man in der Situation eines 
-            moralischen Dilemmas ergreifen kann, und zum Anderen mit den Emotionen, die mit diesen 
-            Handlungen verbunden sind.
+    text: `Wir führen dieses Experiment als Folgestudie eines bereits veröffentlichten Papers durch.
+            Dieses Paper beschäftigte sich mit der Frage wie sich Menschen in moralischen Dilemmata fühlen.
             <br/>
             <br/>
-            In der vorherigen Studie wurde ein moralisches Dilemma vorgestellt, zu welchem die Teilnehmer 
-            Stellung nehmen sollten. Sie hatten die Auswahl zwischen zwei möglichen Reaktionen und mussten 
-            im Anschluss angeben, wie sie sich mit ihrer Entscheidung fühlen würden.
+            In dem Paper wurde ein moralisches Dilemma vorgestellt, zu welchem die Teilnehmern
+            zwei mögliche Handlungsschritte ergreifen konnten. Die Teilnehmer suchten sich den Handlungsschritt aus,
+            den sie bevorzugten und sollten angeben wie sie sich mit dieser Entscheidung fühlten.
             <br/>
             <br/>
-            In diesem Experiment wird Ihnen nun auch ein fiktives moralisches Dilemma präsentiert und Sie müssen 
-            ebenfalls entscheiden, wie Sie handeln würden, und im Anschluss angeben, wie gut oder schlecht 
-            Sie sich mit einer bestimmten Entscheidung fühlen.`,
+            In diesem Experiment wird Ihnen nun auch ein moralisches Dilemma präsentiert.
+            Sie müssen ebenfalls entscheiden wie Sie handeln würden
+            und im Anschluss angeben wie gut oder schlecht Sie sich mit Ihrer Entscheidung fühlen würden.`,
     buttonText: 'Weiter',
   },
 );
@@ -173,17 +171,17 @@ const dilemma_choice = dilemma_custom_view(
     trials: 1,
     name: 'dilemma',
     title: 'Das Dilemma',
-    text: `Stellen Sie sich vor, Sie hätten einen Mann dabei beobachtet, eine Bank auszurauben. 
-            Sie beobachten etwas Unerwartetes: er spendet das Geld an ein heruntergekommenes 
-            Waisenhaus, wo es sehr gut gebraucht werden kann. Nun müssen Sie entscheiden, 
-            ob Sie die Polizei verständigen und den Dieb melden oder ob Sie die Sache auf sich 
+    text: `Stellen Sie sich vor, Sie hätten einen Mann dabei beobachtet, eine Bank auszurauben.
+            Sie beobachten etwas Unerwartetes: Er spendet das Geld an ein heruntergekommenes
+            Waisenhaus, wo es sehr gut gebraucht werden kann. Nun müssen Sie entscheiden,
+            ob Sie die Polizei verständigen und den Dieb melden oder ob Sie die Sache auf sich
             beruhen lassen und den Dieb laufen lassen.`,
     data: _.shuffle(dilemma.choice),
   },
 );
 
 const dilemma_rating = magpieViews.view_generator(
-  'rating_scale', 
+  'rating_scale',
   {
     trials: dilemma.rating.length,
     title: 'Bewertung',
@@ -197,8 +195,8 @@ const control_trial = understanding_custom_view(
     trials: understanding.choice.length,
     title: 'Platzhalter',
     name: 'control',
-    text: `Wie zuvor erwähnt wird, dieses Experiment in Folge einer anderen Studie durchgeführt. Mit 
-            den Informationen, die Sie über die vorherige Studie bekommen haben, welche Aussage trifft 
+    text: `Wie zuvor erwähnt wird, dieses Experiment in Folge einer anderen Studie durchgeführt. Mit
+            den Informationen, die Sie über die vorherige Studie bekommen haben, welche Aussage trifft
             auf das vorherige Experiment zu?`,
     data: understanding.choice
   },
@@ -209,9 +207,9 @@ const group_identity_check = double_dropdown_custom(
     trials: 1,
     title: 'Gruppenzuordnung',
     name: 'gro_identity',
-    text: `Bitte wählen Sie aus, inwiefern Sie den folgenden Aussagen zustimmen. 
+    text: `Bitte wählen Sie aus, inwiefern Sie den folgenden Aussagen zustimmen.
             Wählen sie dabei diejenige Aussage, die Ihnen am treffendsten erscheint.`,
     data: group_identity.check
   }
-  
+
 )
