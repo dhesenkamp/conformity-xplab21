@@ -24,7 +24,11 @@ const intro = magpieViews.view_generator("intro", {
   title: 'Hallo!',
   text: `Vielen Dank, dass Sie an unserem Experiment teilnehmen.
             <br />
-            <br />`,
+            <br />
+            Auf den nächsten Seiten werden Ihnen einige Fragen gestellt. Die Aufzeichnung 
+            der Antworten erfolgt vollständig anonymisiert, es können keine Rückschlüsse auf 
+            Ihre Person gezogen werden. Bitte antworten Sie ehrlich und wählen Sie die Aussagen, 
+            die am besten Ihre Einstellung beschreiben.`,
   buttonText: 'Starten Sie das Experiment'
 });
 
@@ -115,62 +119,32 @@ const thanks = magpieViews.view_generator(
 // forced_choice, slider_rating, dropdown_choice, testbox_input, rating_scale, image_selection, sentence_choice,
 // key_press, self_paced_reading and self_paced_reading_rating_scale
 
-// Choice of political/social issue
-// Needs response_handle_function to store the response
-const issue_choice = magpieViews.view_generator(
-  'sentence_choice', 
+const issue_choice = issue_choice_custom_view(
   {
     trials: social_issues.choice.length,
     name: 'issue_choice',
     title: 'Themenwahl',
-    text: `Im Folgenden sind einige Themen aufgelistet, die von 
-    politischer und/oder sozialer Relevanz sind. Bitte wählen Sie das Thema aus, welches 
-    Ihnen am wichtigsten ist.`,
-    data: social_issues.choice,
-  },
-  {
-    stimulus_container_generator: stimulus_container_generator_custom.social_issue_choice,
-    answer_container_generator: answer_container_generator_custom.sentence_choice_topic,
-  }
-  );
-
-// Rating of chosen social issue
-// Prob. needs custom hook to present statement dependent on choice of topic
-const issue_rating = magpieViews.view_generator(
-  'rating_scale', 
-  {
-    trials: social_issues.rate_statement.length,
-    name: 'issue_rating_11',
-    title: 'Bewerten Sie die folgende Aussage',
-    text: ``,
-    data: social_issues.rate_statement,
-    statement: social_issues.choice.response,
-  },
-  {
-    stimulus_container_generator: stimulus_container_generator_custom.social_issue_rating,
-    answer_container_generator: answer_container_generator_custom.rating_scale_11,
-  }
-  );
-
-// Custom view for choosing political/social issue
-// Currently not in use
-const issue_choice_custom = sentence_choice_custom(
-  'sentence_choice_custom,',
-  {
-    name: 'issue_choice_custom',
-    trials: social_issues.choice.length,
-    title: 'Social issues custom',
+    text: `Im Folgenden sind einige Themen aufgelistet, die von politischer und/oder 
+            sozialer Relevanz sind. Bitte wählen Sie das Thema aus, welches Ihnen 
+            am wichtigsten erscheint.`,
     data: social_issues.choice
-  },
-  /*
-  {
-    answer_container_generator: answer_container_generator_custom.sentence_choice_8
   }
-  */
 );
 
-// Instructions for moral dilemma
-const moral_dilemma_instructions = magpieViews.view_generator(
+const issue_rating = issue_rating_custom_view(
+  {
+    trials: social_issues.rating.length,
+    name: 'issue_rating',
+    title: 'Bewertung',
+    text: `Bitte bewerten Sie nun die folgende Aussage. Die Mitte der Skala bedeutet, 
+            dass Sie neutral zu der Aussage eingestellt sind.`,
+    data: social_issues.rating,
+    optionLeft: 'Stimme gar nicht zu',
+    optionRight: 'Stimme voll zu',
+  },
+);
+
+const dilemma_instructions = magpieViews.view_generator(
   'instructions',
   {
     trials: 1,
@@ -191,73 +165,53 @@ const moral_dilemma_instructions = magpieViews.view_generator(
             ebenfalls entscheiden, wie Sie handeln würden, und im Anschluss angeben, wie gut oder schlecht 
             Sie sich mit einer bestimmten Entscheidung fühlen.`,
     buttonText: 'Weiter',
-  }
+  },
 );
 
-// Choose action for moral dilemma
-const moral_dilemma = magpieViews.view_generator(
-  'sentence_choice',
+const dilemma_choice = dilemma_custom_view(
   {
     trials: 1,
-    name: 'moral_dilemma',
+    name: 'dilemma',
     title: 'Das Dilemma',
-    text: `Stellen Sie sich vor, Sie hätten einen Mann dabei beobachtet, eine Bank auszurauben. Er entkommt 
-            mit dem Geld und deswegen verfolgen Sie ihn. Sie sehen, wie er das Geld in ein heruntergekommenes 
-            Waisenhaus bringt, wo es gut gebraucht werden kann. Nun müssen Sie entscheiden, ob Sie die 
-            Polizei verständigen und den Dieb melden oder ob Sie die Sache auf sich beruhen lassen und den 
-            Dieb laufen lassen.`,
-    question: 'Welche der folgenden Handlungen würden Sie auswählen?',
-    data: dilemma.stimulus,
-  },
-  {
-    stimulus_container_generator: stimulus_container_generator_custom.sentence_choice_dilemma,
-    answer_container_generator: answer_container_generator_custom.sentence_choice_dilemma,
+    text: `Stellen Sie sich vor, Sie hätten einen Mann dabei beobachtet, eine Bank auszurauben. 
+            Sie beobachten etwas Unerwartetes: er spendet das Geld an ein heruntergekommenes 
+            Waisenhaus, wo es sehr gut gebraucht werden kann. Nun müssen Sie entscheiden, 
+            ob Sie die Polizei verständigen und den Dieb melden oder ob Sie die Sache auf sich 
+            beruhen lassen und den Dieb laufen lassen.`,
+    data: _.shuffle(dilemma.choice),
   },
 );
 
-// Rate choice for moral dilemma
-const moral_dilemma_rating = magpieViews.view_generator(
+const dilemma_rating = magpieViews.view_generator(
   'rating_scale', 
   {
     trials: dilemma.rating.length,
     title: 'Bewertung',
-    name: 'moral_dilemma_rating',
+    name: 'dilemma_rating',
     data: dilemma.rating,
   }
 );
 
-// Control trial
-const understanding = magpieViews.view_generator(
-  'sentence_choice', 
+const control_trial = understanding_custom_view(
   {
-    trials: 1,
-    name: 'understanding',
-    title: 'Verständnis',
-    question: '',
-    text: `Wie zuvor erwähnt wird dieses Experiment in Folge einer anderen Studie durchgeführt. Mit den 
-            Informationen, die Sie über die vorherige Studie bekommen haben, welche Aussage trifft auf 
-            das vorherige Experiment zu?`,
-    question: '',
-    data: understanding_check.check,
-  },
-  {
-    stimulus_container_generator: stimulus_container_generator_custom.understanding_check,
-    answer_container_generator: answer_container_generator_custom.understanding_check,
+    trials: understanding.choice.length,
+    title: 'Platzhalter',
+    name: 'control',
+    text: `Wie zuvor erwähnt wird, dieses Experiment in Folge einer anderen Studie durchgeführt. Mit 
+            den Informationen, die Sie über die vorherige Studie bekommen haben, welche Aussage trifft 
+            auf das vorherige Experiment zu?`,
+    data: understanding.choice
   },
 );
 
-// Group identification trial
-const identity = magpieViews.view_generator(
-  'rating_scale',
+const group_identity_check = double_dropdown_custom(
   {
     trials: 1,
     title: 'Gruppenzuordnung',
-    name: 'identity',
-    question: 'Bitte wählen Sie nun aus, inwiefern Sie den folgenden Aussagen zustimmen.',
-    data: identity_check.check,
-  },
-  {
-    answer_container_generator: answer_container_generator_custom.identity_check_dropdown,
-    handle_response_function: handle_response_custom.identity_check,
-  },
-);
+    name: 'gro_identity',
+    text: `Bitte wählen Sie aus, inwiefern Sie den folgenden Aussagen zustimmen. 
+            Wählen sie dabei diejenige Aussage, die Ihnen am treffendsten erscheint.`,
+    data: group_identity.check
+  }
+  
+)
