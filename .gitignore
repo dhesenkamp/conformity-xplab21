@@ -1,5 +1,6 @@
 # General
 .DS_Store
+**/.DS_Store
 
 # Hosting on Netlify automatically creates this folder
 /experiment/node_modules
