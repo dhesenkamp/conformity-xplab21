@@ -139,6 +139,66 @@ const issue_rating_custom_view = function(config, CT) {
     return view;
 };
 
+const dilemma_rating_custom_view = function(config, CT) {
+    const view = {
+        name: config.name,
+        CT: 0,
+        trials: config.trials,
+
+        render: function (CT, magpie) {
+            $("main").html(`<div class='magpie-view'>
+                <h1 class='magpie-view-title'>${config.title}</h1>
+
+                <div class='magpie-view-stimulus-container-custom'>
+                <p class='magpie-view-text'>${config.text}</p>
+                </div>
+                <br/>
+                <br/>
+
+                <div class='magpie-view-answer-container'>
+                <strong class='magpie-response-rating-option magpie-view-text'>${config.data[CT].optionLeft}</strong>
+                <label for="1" class='magpie-response-rating'>1</label>
+                <input type="radio" name="answer" id="1" value="1" />
+                <label for="2" class='magpie-response-rating'>2</label>
+                <input type="radio" name="answer" id="2" value="2" />
+                <label for="3" class='magpie-response-rating'>3</label>
+                <input type="radio" name="answer" id="3" value="3" />
+                <label for="4" class='magpie-response-rating'>4</label>
+                <input type="radio" name="answer" id="4" value="4" />
+                <label for="5" class='magpie-response-rating'>5</label>
+                <input type="radio" name="answer" id="5" value="5" />
+                <label for="6" class='magpie-response-rating'>6</label>
+                <input type="radio" name="answer" id="6" value="6" />
+                <label for="7" class='magpie-response-rating'>7</label>
+                <input type="radio" name="answer" id="7" value="7" />
+                <strong class='magpie-response-rating-option magpie-view-text'>${config.data[CT].optionRight}</strong>
+                </div>
+
+                </div>`);
+
+            const handle_click = function(e) {
+                let trial_data = {
+                    trial_name: config.name,
+                    trial_number: CT + 1,
+                    response: e.target.id
+                };
+
+                magpie.trial_data.push(trial_data);
+                magpie.findNextView();
+            };
+
+            $('#1').on("click", handle_click);
+            $('#2').on("click", handle_click);
+            $('#3').on("click", handle_click);
+            $('#4').on("click", handle_click);
+            $('#5').on("click", handle_click);
+            $('#6').on("click", handle_click);
+            $('#7').on("click", handle_click);
+        }
+    };
+    return view;
+};
+
 const dilemma_custom_view = function(config, CT) {
     const view = {
         name: config.name,
@@ -240,10 +300,7 @@ const understanding_custom_view = function(config, CT) {
                     trial_name: config.name,
                     trial_number: CT + 1,
                     response: e.target.id,
-                    // Hard-coded correctness
-                    // correct: config.data[CT].expected
-                    // double-check correct option in 04_trials.js and corresponding ID of label
-                    correct: 1
+                    correct: e.target.id == config.data[CT].expected
                 };
 
                 magpie.trial_data.push(trial_data);

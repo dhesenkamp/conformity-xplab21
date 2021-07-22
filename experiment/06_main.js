@@ -20,7 +20,7 @@ $("document").ready(function() {
             issue_rating,
             dilemma_instructions,
             dilemma_choice,
-            dilemma_rating,
+            dilemma_rating2,
             control_trial,
             group_identity_check,
             thank_participant,

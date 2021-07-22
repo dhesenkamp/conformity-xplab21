@@ -185,6 +185,17 @@ const dilemma_rating = magpieViews.view_generator(
   {
     trials: dilemma.rating.length,
     title: 'Bewertung',
+    text: `Wie fühlen Sie sich mit Ihrer Entscheidung?`,
+    name: 'dilemma_rating',
+    data: dilemma.rating,
+  }
+);
+
+const dilemma_rating2 = dilemma_rating_custom_view(
+  {
+    trials: dilemma.rating.length,
+    title: 'Bewertung',
+    text: `Wie fühlen Sie sich mit Ihrer Entscheidung?`,
     name: 'dilemma_rating',
     data: dilemma.rating,
   }

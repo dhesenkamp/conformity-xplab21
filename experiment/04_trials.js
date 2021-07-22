@@ -91,7 +91,6 @@ const dilemma = {
 
     rating: [
         {
-            question: 'Wie fühlen Sie sich mit Ihrer Entscheidung?',
             optionRight: 'Sehr gut',
             optionLeft: 'Sehr schlecht',
         },
@@ -101,13 +100,12 @@ const dilemma = {
 const understanding = {
     choice: [
         {
-            // Correct option is hard-coded in custom view. If order is changed here, 
-            // the corresponding option (-> label ID) has to be changed in 03_custom_views_templates.js
             option1: 'Die Teilnehmer nahmen Stellung zu einem moralischen Dilemma.',
             option2: 'Die Teilnehmer sollten das Experiment mit geschlossenen Augen absolvieren.',
             option3: 'Die Teilnehmer mussten Haustiere nach Niedlichkeit bewerten.',
             option4: 'Die Daten aus dem vorherigen Experiment wurden nicht gespeichert.',
-            expected: 'Die Teilnehmer nahmen Stellung zu einem moralischen Dilemma.',
+            // correct: option 1
+            expected: 1,
         }
     ]
 };
