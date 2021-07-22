@@ -241,8 +241,9 @@ const understanding_custom_view = function(config, CT) {
                     trial_number: CT + 1,
                     response: e.target.id,
                     // Hard-coded correctness
-                    //correct: config.data[CT].expected
-                    correct: 2
+                    // correct: config.data[CT].expected
+                    // double-check correct option in 04_trials.js and corresponding ID of label
+                    correct: 1
                 };
 
                 magpie.trial_data.push(trial_data);

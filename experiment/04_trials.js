@@ -19,7 +19,7 @@ const social_issues = {
         {
             // array entries sorted like 'choice'
             statements: [
-                'Zum Erreichen des 1,5° Grad Ziels müssen strengere Maßnahmen ergriffen werden.',
+                'Zum Erreichen des 1,5°-Grad-Ziels müssen strengere Maßnahmen ergriffen werden.',
                 'In Deutschland muss es eine Migrationsobergrenze geben.',
                 'Eine Frauenquote in allen Institutionen ist essentiell für Gleichberechtigung.',
                 'Cannabis sollte für Erwachsene frei zugänglich sein.',
@@ -101,10 +101,12 @@ const dilemma = {
 const understanding = {
     choice: [
         {
+            // Correct option is hard-coded in custom view. If order is changed here, 
+            // the corresponding option (-> label ID) has to be changed in 03_custom_views_templates.js
             option1: 'Die Teilnehmer nahmen Stellung zu einem moralischen Dilemma.',
             option2: 'Die Teilnehmer sollten das Experiment mit geschlossenen Augen absolvieren.',
             option3: 'Die Teilnehmer mussten Haustiere nach Niedlichkeit bewerten.',
-            option4: 'Die Daten aus den vorherigen Experiment wurden nicht gespeichert.',
+            option4: 'Die Daten aus dem vorherigen Experiment wurden nicht gespeichert.',
             expected: 'Die Teilnehmer nahmen Stellung zu einem moralischen Dilemma.',
         }
     ]
@@ -132,6 +134,7 @@ const group_identity = {
                 'Stimme nicht zu',
                 'Stimme gar nicht zu',
             ],
+            // not used
             statement1: 'Ich würde mich als Teil der Gruppe der [ingroup] bezeichnen.',
             statement2: 'Ich würde mich als Teil der Gruppe der [outgroup] bezeichnen.',
         },

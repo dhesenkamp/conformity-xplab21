@@ -151,17 +151,17 @@ const dilemma_instructions = magpieViews.view_generator(
     name: 'instructions_moral_dilemma',
     title: 'Anweisungen',
     text: `Wir führen dieses Experiment als Folgestudie eines bereits veröffentlichten Papers durch.
-            Dieses Paper beschäftigte sich mit der Frage wie sich Menschen in moralischen Dilemmata fühlen.
+            Dieses Paper beschäftigte sich mit der Frage, wie sich Menschen in moralischen Dilemmata fühlen.
             <br/>
             <br/>
-            In dem Paper wurde ein moralisches Dilemma vorgestellt, zu welchem die Teilnehmern
+            In dem Paper wurde ein moralisches Dilemma vorgestellt, zu welchem die Teilnehmer
             zwei mögliche Handlungsschritte ergreifen konnten. Die Teilnehmer suchten sich den Handlungsschritt aus,
-            den sie bevorzugten und sollten angeben wie sie sich mit dieser Entscheidung fühlten.
+            den sie bevorzugten, und sollten angeben, wie sie sich mit dieser Entscheidung fühlten.
             <br/>
             <br/>
             In diesem Experiment wird Ihnen nun auch ein moralisches Dilemma präsentiert.
-            Sie müssen ebenfalls entscheiden wie Sie handeln würden
-            und im Anschluss angeben wie gut oder schlecht Sie sich mit Ihrer Entscheidung fühlen würden.`,
+            Sie müssen ebenfalls entscheiden, wie Sie handeln würden,
+            und im Anschluss angeben, wie gut oder schlecht Sie sich mit Ihrer Entscheidung fühlen würden.`,
     buttonText: 'Weiter',
   },
 );
@@ -174,8 +174,8 @@ const dilemma_choice = dilemma_custom_view(
     text: `Stellen Sie sich vor, Sie hätten einen Mann dabei beobachtet, eine Bank auszurauben.
             Sie beobachten etwas Unerwartetes: Er spendet das Geld an ein heruntergekommenes
             Waisenhaus, wo es sehr gut gebraucht werden kann. Nun müssen Sie entscheiden,
-            ob Sie die Polizei verständigen und den Dieb melden oder ob Sie die Sache auf sich
-            beruhen lassen und den Dieb laufen lassen.`,
+            ob Sie die Polizei verständigen und den Dieb melden, oder ob Sie die Sache auf sich
+            beruhen und den Dieb laufen lassen.`,
     data: _.shuffle(dilemma.choice),
   },
 );
@@ -195,7 +195,7 @@ const control_trial = understanding_custom_view(
     trials: understanding.choice.length,
     title: 'Platzhalter',
     name: 'control',
-    text: `Wie zuvor erwähnt wird, dieses Experiment in Folge einer anderen Studie durchgeführt. Mit
+    text: `Wie zuvor erwähnt, wird dieses Experiment in Folge einer anderen Studie durchgeführt. Mit
             den Informationen, die Sie über die vorherige Studie bekommen haben, welche Aussage trifft
             auf das vorherige Experiment zu?`,
     data: understanding.choice
