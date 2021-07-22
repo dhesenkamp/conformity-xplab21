@@ -217,7 +217,7 @@ const group_identity_check = double_dropdown_custom(
   {
     trials: 1,
     title: 'Gruppenzuordnung',
-    name: 'gro_identity',
+    name: 'group_identity',
     text: `Bitte wählen Sie aus, inwiefern Sie den folgenden Aussagen zustimmen.
             Wählen sie dabei diejenige Aussage, die Ihnen am treffendsten erscheint.`,
     data: group_identity.check
