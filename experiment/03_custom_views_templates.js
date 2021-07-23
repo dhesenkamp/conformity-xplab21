@@ -40,7 +40,7 @@ const issue_choice_custom_view = function(config, CT) {
                 let trial_data = {
                     trial_name: config.name,
                     trial_number: CT + 1,
-                    response: e.target.id
+                    topIssue: e.target.id
                 };
 
                 magpie.trial_data.push(trial_data);
@@ -69,7 +69,7 @@ const issue_rating_custom_view = function(config, CT) {
         render: function (CT, magpie) {
             //console.log(magpie.trial_data[0].response)
             //console.log(config.data[CT])
-            let statement = magpie.trial_data[0].response -1
+            let statement = magpie.trial_data[0].topIssue -1
 
             $("main").html(`<div class='magpie-view'>
                 <h1 class='magpie-view-title'>${config.title}</h1>
@@ -116,7 +116,7 @@ const issue_rating_custom_view = function(config, CT) {
                 let trial_data = {
                     trial_name: config.name,
                     trial_number: CT + 1,
-                    response: e.target.id
+                    topIssueRating: e.target.id
                 };
 
                 magpie.trial_data.push(trial_data);
@@ -157,20 +157,20 @@ const dilemma_rating_custom_view = function(config, CT) {
 
                 <div class='magpie-view-answer-container'>
                 <strong class='magpie-response-rating-option magpie-view-text'>${config.data[CT].optionLeft}</strong>
+                <label for="-3" class='magpie-response-rating'>-3</label>
+                <input type="radio" name="answer" id="-3" value="-3" />
+                <label for="-2" class='magpie-response-rating'>-2</label>
+                <input type="radio" name="answer" id="-2" value="-2" />
+                <label for="-1" class='magpie-response-rating'>-1</label>
+                <input type="radio" name="answer" id="-1" value="-1" />
+                <label for="0" class='magpie-response-rating'>0</label>
+                <input type="radio" name="answer" id="0" value="0" />
                 <label for="1" class='magpie-response-rating'>1</label>
                 <input type="radio" name="answer" id="1" value="1" />
                 <label for="2" class='magpie-response-rating'>2</label>
                 <input type="radio" name="answer" id="2" value="2" />
                 <label for="3" class='magpie-response-rating'>3</label>
                 <input type="radio" name="answer" id="3" value="3" />
-                <label for="4" class='magpie-response-rating'>4</label>
-                <input type="radio" name="answer" id="4" value="4" />
-                <label for="5" class='magpie-response-rating'>5</label>
-                <input type="radio" name="answer" id="5" value="5" />
-                <label for="6" class='magpie-response-rating'>6</label>
-                <input type="radio" name="answer" id="6" value="6" />
-                <label for="7" class='magpie-response-rating'>7</label>
-                <input type="radio" name="answer" id="7" value="7" />
                 <strong class='magpie-response-rating-option magpie-view-text'>${config.data[CT].optionRight}</strong>
                 </div>
 
@@ -180,20 +180,20 @@ const dilemma_rating_custom_view = function(config, CT) {
                 let trial_data = {
                     trial_name: config.name,
                     trial_number: CT + 1,
-                    response: e.target.id
+                    rating: e.target.id
                 };
 
                 magpie.trial_data.push(trial_data);
                 magpie.findNextView();
             };
 
+            $('#-3').on("click", handle_click);
+            $('#-2').on("click", handle_click);
+            $('#-1').on("click", handle_click);
+            $('#0').on("click", handle_click);
             $('#1').on("click", handle_click);
             $('#2').on("click", handle_click);
             $('#3').on("click", handle_click);
-            $('#4').on("click", handle_click);
-            $('#5').on("click", handle_click);
-            $('#6').on("click", handle_click);
-            $('#7').on("click", handle_click);
         }
     };
     return view;
@@ -206,7 +206,7 @@ const dilemma_custom_view = function(config, CT) {
         trials: config.trials,
 
         render: function (CT, magpie) {
-            let response = magpie.trial_data[0].response -1
+            let response = magpie.trial_data[0].topIssue -1
             let topics = [
                 'Klimapolitik',
                 'Migrationspolitik',
@@ -221,7 +221,7 @@ const dilemma_custom_view = function(config, CT) {
             let topic2 = ''
             // Dynamic display of 2nd sentence dependend on exp. condition
             let cond = config.data[CT].id
-            if (cond > 2) {
+            if (cond > 4) {
                 topic2 = topic
             };
 
@@ -302,7 +302,8 @@ const understanding_custom_view = function(config, CT) {
                 let trial_data = {
                     trial_name: config.name,
                     trial_number: CT + 1,
-                    response: e.target.id,
+                    understandingCheckResponse: e.target.id,
+                    // understandingCheckOrder not implemented
                     correct: e.target.id == config.data[CT].expected
                 };
 
@@ -324,13 +325,37 @@ const double_dropdown_custom = function(config, CT) {
         name: config.name,
         CT: 0,
         trials: config.trials,
+        groups: [
+            ['KlimaaktivistInnen', 'Klimaleugnern'],
+            ['Migrationsbefürwortenden', 'Migrationsgegnern'],
+            ['FeministInnen', 'Nicht-Feministen'],
+            ['Legalisierungsbefürwortenden', 'Legalisierungsgegnern'],
+            ['Befürwortenden zur Beibehaltung des Rentenalters', 'Rentenalter-Anhebungs-Befürwortern'],
+            ['Veganern und Vegetariern', 'Omnivoren'],
+            ['G8-Befürwortenden', 'G9-Befürwortenden'],
+            ['Pro-Choice-Befürwortenden', 'Pro-Life-Befürwortenden'],
+        ],
 
         render: function(CT, magpie) {
-            let response1;
-            let response2;
+            //console.log(magpie.trial_data);
+            let responseIngroup;
+            let responseOutgroup;
             let response_flags = [0,0];
-            let group = magpie.trial_data[0].response -1;
-
+            let group = magpie.trial_data[0].topIssue -1;
+            let rating = magpie.trial_data[1].topIssueRating;
+            let ingroup;
+            let outgroup;
+            let ingroupAgree;
+            let outgroupDisagree;
+           
+            // Definition of in- and outgroup for dynamic display
+            if (rating > 5) {
+                ingroup = config.data[CT].groups[group][0],
+                outgroup = config.data[CT].groups[group][1]
+            } else {
+                ingroup = config.data[CT].groups[group][1],
+                outgroup = config.data[CT].groups[group][0]
+            };
 
             $("main").html(`<div class='magpie-view'>
             <h1 class='magpie-view-title'>${config.title}</h1>
@@ -343,7 +368,7 @@ const double_dropdown_custom = function(config, CT) {
             <br/>
 
             <div class='magpie-view-answer-container magpie-response-dropdown'>
-            <p class='magpie-view-text'>Ich identifiziere mich mit <strong>${config.data[CT].groups[group][0]}</strong>.</p>
+            <p class='magpie-view-text'>Ich identifiziere mich mit <strong>${ingroup}</strong>.</p>
             <select id='response1' name='answer_1'>
                 <option disabled selected></option>
                 <option value=1>${config.data[CT].choice[0]}</option>
@@ -356,7 +381,7 @@ const double_dropdown_custom = function(config, CT) {
             </select>
             <br />
             <br />
-            <p class='magpie-view-text'>Ich identifiziere mich mit <strong>${config.data[CT].groups[group][1]}</strong>.</p>
+            <p class='magpie-view-text'>Ich identifiziere mich mit <strong>${outgroup}</strong>.</p>
             <select id='response2' name='answer_2'>
                 <option disabled selected></option>
                 <option value=1>${config.data[CT].choice[0]}</option>
@@ -373,8 +398,8 @@ const double_dropdown_custom = function(config, CT) {
 
             </div>`);
 
-            response1 = $('#response1');
-            response2 = $('#response2');
+            responseIngroup = $('#response1');
+            responseOutgroup = $('#response2');
 
             const display_button_checker = function(response_nr) {
                 response_flags[response_nr] = 1;
@@ -383,21 +408,34 @@ const double_dropdown_custom = function(config, CT) {
                 }
             };
 
-            response1.on("change", function() {
+            responseIngroup.on("change", function() {
                 response_flags[0] = 1;
                 display_button_checker(0);
             });
-            response2.on("change", function() {
+            responseOutgroup.on("change", function() {
                 response_flags[1] = 1;
                 display_button_checker(1);
             });
 
             $('#next').on('click', function() {
+                if ($(responseIngroup).val() >= 5) {
+                    ingroupAgree = 1
+                } else {
+                    ingroupAgree = 0
+                };
+                if ($(responseOutgroup).val() <= 3 ) {
+                    outgroupDisagree = 1
+                } else {
+                    outgroupDisagree = 0
+                };
+
                 let trial_data = {
                     trial_name: config.name,
                     trial_number: CT + 1,
-                    response1: $(response1).val(),
-                    response2: $(response2).val(),
+                    identityIngroupResponse: $(responseIngroup).val(),
+                    identityOutgroupResponse: $(responseOutgroup).val(),
+                    ingroupAgree: ingroupAgree,
+                    outgroupDisagree: outgroupDisagree,
                 };
                 magpie.trial_data.push(trial_data);
                 magpie.findNextView();

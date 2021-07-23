@@ -191,23 +191,23 @@ const group_identity = {
     check: [
         {
             groups: [
-                ['KlimaaktivistInnen', 'Klimaleugnern'],
-                ['Migrationsbefürwortenden', 'Migrationsgegnern'],
-                ['FeministInnen', 'Nicht-Feministen'],
+                ['Klimaaktivist:innen', 'Klimakrisenleugnern'],
+                ['Migrationsgegnern', 'Migrationsbefürwortenden',],
+                ['Feminist:innen', 'Nicht-Feministen'],
                 ['Legalisierungsbefürwortenden', 'Legalisierungsgegnern'],
-                ['Befürwortenden zur Beibehaltung des Rentenalters', 'Rentenalter-Anhebungs-Befürwortern'],
+                ['Befürwortenden zur Anhebung des Rentenalters', 'Befürwortenden zur Beibehaltung des Rentenalters'],
                 ['Veganern und Vegetariern', 'Omnivoren'],
                 ['G8-Befürwortenden', 'G9-Befürwortenden'],
                 ['Pro-Choice-Befürwortenden', 'Pro-Life-Befürwortenden'],
             ],
             choice: [
-                'Stimme voll zu',
-                'Stimme zu',
-                'Stimme teils zu',
-                'Weder noch',
-                'Stimme teils nicht zu',
-                'Stimme nicht zu',
                 'Stimme gar nicht zu',
+                'Stimme nicht zu',
+                'Stimme teils nicht zu',
+                'Weder noch',
+                'Stimme teils zu',
+                'Stimme zu',
+                'Stimme voll zu',
             ],
             // not used
             statement1: 'Ich würde mich als Teil der Gruppe der [ingroup] bezeichnen.',
