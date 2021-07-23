@@ -67,11 +67,10 @@ const issue_rating_custom_view = function(config, CT) {
         trials: config.trials,
 
         render: function (CT, magpie) {
-            //console.log(magpie.trial_data[0].response)
-            //console.log(config.data[CT])
             let statement = magpie.trial_data[0].topIssue -1
 
             $("main").html(`<div class='magpie-view'>
+            
                 <h1 class='magpie-view-title'>${config.title}</h1>
 
                 <div class='magpie-view-stimulus-container-custom'>
@@ -85,6 +84,8 @@ const issue_rating_custom_view = function(config, CT) {
 
                 <div class='magpie-view-answer-container'>
                 <strong class='magpie-response-rating-option magpie-view-text'>${config.optionLeft}</strong>
+                <label for="0" class='magpie-response-rating'>0</label>
+                <input type="radio" name="answer" id="0" value="0" />
                 <label for="1" class='magpie-response-rating'>1</label>
                 <input type="radio" name="answer" id="1" value="1" />
                 <label for="2" class='magpie-response-rating'>2</label>
@@ -105,13 +106,12 @@ const issue_rating_custom_view = function(config, CT) {
                 <input type="radio" name="answer" id="9" value="9" />
                 <label for="10" class='magpie-response-rating'>10</label>
                 <input type="radio" name="answer" id="10" value="10" />
-                <label for="11" class='magpie-response-rating'>11</label>
-                <input type="radio" name="answer" id="11" value="11" />
                 <strong class='magpie-response-rating-option magpie-view-text'>${config.optionRight}</strong>
                 </div>
 
                 </div>`);
 
+            // Store response
             const handle_click = function(e) {
                 let trial_data = {
                     trial_name: config.name,
@@ -123,6 +123,8 @@ const issue_rating_custom_view = function(config, CT) {
                 magpie.findNextView();
             };
 
+            // Add handle_click function to each button
+            $('#0').on("click", handle_click);
             $('#1').on("click", handle_click);
             $('#2').on("click", handle_click);
             $('#3').on("click", handle_click);
@@ -133,7 +135,6 @@ const issue_rating_custom_view = function(config, CT) {
             $('#8').on("click", handle_click);
             $('#9').on("click", handle_click);
             $('#10').on("click", handle_click);
-            $('#11').on("click", handle_click);
         }
     };
     return view;
