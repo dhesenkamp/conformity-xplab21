@@ -44,11 +44,14 @@ const instructions = magpieViews.view_generator("instructions", {
 });
 
 // Post-test questionaire
-const post_test = magpieViews.view_generator("post_test", {
+const demographic = magpieViews.view_generator("post_test", {
   trials: 1,
   name: 'post_test',
-  title: 'Zusätzliche Informationen',
-  text: 'Die folgenden Fragen zu beantworten ist optional, hilft uns aber dabei, unsere Ergebnisse zu analysieren.',
+  title: 'Demographische Informationen',
+  text: `Die folgenden Fragen zu beantworten ist optional, hilft uns aber dabei, 
+          unsere Ergebnisse zu analysieren. Das eigentliche beginnt nach diesem Fragebogen. 
+          Wenn Sie keine der Fragen beantworten möchten, dann klicken Sie einfach auf die 
+          Schaltfläche 'Weiter'.`,
 
   // You can change much of what appears here, e.g., to present it in a different language, as follows:
   buttonText: 'Weiter',
