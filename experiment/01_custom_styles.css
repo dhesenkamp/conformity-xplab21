@@ -45,3 +45,20 @@
     border-radius: 4px;
     background-color: #eee;
 }
+
+.magpie-response-sentence-custom {
+    background: rgba(49, 74, 139, 0.10);
+    border-radius: 5px;
+    display: block;
+    font-family: "Lato", "Noto Sans", sans-serif;
+    font-size: 17px;
+    line-height: 27px;
+    margin: 5px auto;
+    padding: 10px;
+    max-width: 550px;
+}
+
+.magpie-response-sentence-custom:hover {
+    background: rgba(17, 71, 206, 0.3);
+    cursor: pointer;
+}

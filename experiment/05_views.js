@@ -49,9 +49,9 @@ const demographic = magpieViews.view_generator("post_test", {
   name: 'post_test',
   title: 'Demographische Informationen',
   text: `Die folgenden Fragen zu beantworten ist optional, hilft uns aber dabei, 
-          unsere Ergebnisse zu analysieren. Das eigentliche beginnt nach diesem Fragebogen. 
-          Wenn Sie keine der Fragen beantworten möchten, dann klicken Sie einfach auf die 
-          Schaltfläche 'Weiter'.`,
+          unsere Ergebnisse zu analysieren. Das eigentliche Experiment beginnt nach 
+          diesem Fragebogen. Wenn Sie keine der Fragen beantworten möchten, dann 
+          klicken Sie einfach auf die Schaltfläche "Weiter".`,
 
   // You can change much of what appears here, e.g., to present it in a different language, as follows:
   buttonText: 'Weiter',
@@ -75,12 +75,13 @@ const thank_participant = magpieViews.view_generator(
   {
     trials: 1,
     name: 'thank_participant',
-    title: 'Vielen Dank für die Teilnahme an diesem Experiment!',
-    text: 'Vielen Dank, dass Sie sich die Zeit genommen haben, um an unserem Experiment teilzunehmen. Sie können unten auf weiter klicken und danach das Browserfenster schließen.',
-    buttonText: 'Weiter',
+    title: 'Vielen Dank für Ihre Teilnahme!',
+    text: `Vielen Dank, dass Sie sich die Zeit genommen haben, um an unserem 
+            Experiment teilzunehmen. Sie können unten auf die Schaltfläche "Beenden" 
+            klicken und danach das Browserfenster schließen.`,
+    buttonText: 'Beenden',
   },
 );
-
 
 // Don't delete, responsible for submission of answers
 const thanks = magpieViews.view_generator(
@@ -157,14 +158,14 @@ const dilemma_instructions = magpieViews.view_generator(
             Dieses Paper beschäftigte sich mit der Frage, wie sich Menschen in moralischen Dilemmata fühlen.
             <br/>
             <br/>
-            In dem Paper wurde ein moralisches Dilemma vorgestellt, zu welchem die Teilnehmer
-            zwei mögliche Handlungsschritte ergreifen konnten. Die Teilnehmer suchten sich den Handlungsschritt aus,
+            In dem Paper wurde ein moralisches Dilemma vorgestellt, zu welchem den Teilnehmern
+            zwei mögliche Handlungsschritte präsentiert wurden. Die Teilnehmer suchten sich den Handlungsschritt aus,
             den sie bevorzugten, und sollten angeben, wie sie sich mit dieser Entscheidung fühlten.
             <br/>
             <br/>
             In diesem Experiment wird Ihnen nun auch ein moralisches Dilemma präsentiert.
-            Sie müssen ebenfalls entscheiden, wie Sie handeln würden,
-            und im Anschluss angeben, wie gut oder schlecht Sie sich mit Ihrer Entscheidung fühlen würden.`,
+            Sie müssen ebenfalls entscheiden, wie Sie handeln würden, und im Anschluss angeben, 
+            wie gut oder schlecht Sie sich mit Ihrer Entscheidung fühlen würden.`,
     buttonText: 'Weiter',
   },
 );
@@ -175,30 +176,18 @@ const dilemma_choice = dilemma_custom_view(
     name: 'dilemma',
     title: 'Das Dilemma',
     text: `Stellen Sie sich vor, Sie hätten einen Mann dabei beobachtet, eine Bank auszurauben.
-            Sie beobachten etwas Unerwartetes: Er spendet das Geld an ein heruntergekommenes
-            Waisenhaus, wo es sehr gut gebraucht werden kann. Nun müssen Sie entscheiden,
+            Sie beobachteten etwas Unerwartetes: Er spendete das Geld an ein heruntergekommenes
+            Waisenhaus, wo es sehr gut gebraucht werden konnte. Nun müssen Sie entscheiden,
             ob Sie die Polizei verständigen und den Dieb melden, oder ob Sie die Sache auf sich
             beruhen und den Dieb laufen lassen.`,
     data: _.shuffle(dilemma.choice),
   },
 );
 
-const dilemma_rating = magpieViews.view_generator(
-  'rating_scale',
+const dilemma_rating = dilemma_rating_custom_view(
   {
     trials: dilemma.rating.length,
     title: 'Bewertung',
-    text: `Wie fühlen Sie sich mit Ihrer Entscheidung?`,
-    name: 'dilemma_rating',
-    data: dilemma.rating,
-  }
-);
-
-const dilemma_rating2 = dilemma_rating_custom_view(
-  {
-    trials: dilemma.rating.length,
-    title: 'Bewertung',
-    text: `Wie fühlen Sie sich mit Ihrer Entscheidung?`,
     name: 'dilemma_rating',
     data: dilemma.rating,
   }

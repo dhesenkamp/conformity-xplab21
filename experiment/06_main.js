@@ -21,7 +21,7 @@ $("document").ready(function() {
             issue_rating,
             dilemma_instructions,
             dilemma_choice,
-            dilemma_rating2,
+            dilemma_rating,
             control_trial,
             group_identity_check,
             thank_participant,

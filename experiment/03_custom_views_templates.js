@@ -24,14 +24,14 @@ const issue_choice_custom_view = function(config, CT) {
                 </div>
 
                 <div class='magpie-view-answer-container'>
-                <label id="1" class='magpie-response-sentence'>${config.data[CT].option1}</label>
-                <label id="2" class='magpie-response-sentence'>${config.data[CT].option2}</label>
-                <label id="3" class='magpie-response-sentence'>${config.data[CT].option3}</label>
-                <label id="4" class='magpie-response-sentence'>${config.data[CT].option4}</label>
-                <label id="5" class='magpie-response-sentence'>${config.data[CT].option5}</label>
-                <label id="6" class='magpie-response-sentence'>${config.data[CT].option6}</label>
-                <label id="7" class='magpie-response-sentence'>${config.data[CT].option7}</label>
-                <label id="8" class='magpie-response-sentence'>${config.data[CT].option8}</label>
+                <label id="1" class='magpie-response-sentence-custom'>${config.data[CT].option1}</label>
+                <label id="2" class='magpie-response-sentence-custom'>${config.data[CT].option2}</label>
+                <label id="3" class='magpie-response-sentence-custom'>${config.data[CT].option3}</label>
+                <label id="4" class='magpie-response-sentence-custom'>${config.data[CT].option4}</label>
+                <label id="5" class='magpie-response-sentence-custom'>${config.data[CT].option5}</label>
+                <label id="7" class='magpie-response-sentence-custom'>${config.data[CT].option7}</label>
+                <label id="8" class='magpie-response-sentence-custom'>${config.data[CT].option8}</label>
+                <label id="6" class='magpie-response-sentence-custom'>${config.data[CT].option6}</label>
                 </div>
 
                 </div>`);
@@ -139,6 +139,85 @@ const issue_rating_custom_view = function(config, CT) {
     return view;
 };
 
+const dilemma_custom_view = function(config, CT) {
+    const view = {
+        name: config.name,
+        CT: 0,
+        trials: config.trials,
+
+        render: function (CT, magpie) {
+            let response = magpie.trial_data[0].topIssue -1
+            let topics = [
+                'Klimapolitik',
+                'Migrationspolitik',
+                'Feminismus',
+                'Legalisierung von Cannabis',
+                'Rentenalter',
+                'Fleischkonsum',
+                'Bildung',
+                'Abtreibung'
+            ]
+            let topic = topics[response]
+            let topic2 = ''
+            // Dynamic display of 2nd sentence dependend on exp. condition
+            let cond = config.data[CT].id
+            if (cond > 4) {
+                topic2 = topic
+            };
+
+            $("main").html(`<div class='magpie-view'>
+
+                <h1 class='magpie-view-title'>${config.title}</h1>
+
+                <div class='magpie-view-stimulus-container-custom'>
+                <p class='magpie-view-text'>${config.text}</p>
+                <br/>
+                <br/>
+                <p class='magpie-view-text'>In der vorherigen Studie haben</p>
+                <br/>
+                <p class='magpie-view-text'>${config.data[CT].chunk1}${topic}${config.data[CT].chunk2}</p>
+                <br/>
+                <p class='magpie-view-text'>${config.data[CT].chunk3}${topic2}${config.data[CT].chunk4}</p>
+                </div>
+
+                <div class='magpie-view-answer-container'>
+                <p class='magpie-view-text' align='left'>Würden Sie...</p>
+                <label id="1" class='magpie-response-sentence-custom'>${config.data[CT].option1}</label>
+                <label id="2" class='magpie-response-sentence-custom'>${config.data[CT].option2}</label>
+                <label id="3" class='magpie-response-sentence-custom'>${config.data[CT].option3}</label>
+                <label id="4" class='magpie-response-sentence-custom'>${config.data[CT].option4}</label>
+                <label id="5" class='magpie-response-sentence-custom'>${config.data[CT].option5}</label>
+                <label id="6" class='magpie-response-sentence-custom'>${config.data[CT].option6}</label>
+                </div>
+
+                </div>`);
+
+            const handle_click = function(e) {
+                let trial_data = {
+                    trial_name: config.name,
+                    trial_number: CT + 1,
+                    //condition: config.data[CT].id,
+                    ingroupNorm: config.data[CT].ingroupNorm,
+                    bothShown: config.data[CT].bothShown,
+                    ingroupFirst: config.data[CT].ingroupFirst,
+                    response: e.target.id
+                };
+
+                magpie.trial_data.push(trial_data);
+                magpie.findNextView();
+            };
+
+            $('#1').on("click", handle_click);
+            $('#2').on("click", handle_click);
+            $('#3').on("click", handle_click);
+            $('#4').on("click", handle_click);
+            $('#5').on("click", handle_click);
+            $('#6').on("click", handle_click);
+        },
+    };
+    return view;
+};
+
 const dilemma_rating_custom_view = function(config, CT) {
     const view = {
         name: config.name,
@@ -146,12 +225,18 @@ const dilemma_rating_custom_view = function(config, CT) {
         trials: config.trials,
 
         render: function (CT, magpie) {
+            //console.log(magpie.trial_data)
+            let action = magpie.trial_data[2].response - 1
+
+
             $("main").html(`<div class='magpie-view'>
+
                 <h1 class='magpie-view-title'>${config.title}</h1>
 
                 <div class='magpie-view-stimulus-container-custom'>
-                <p class='magpie-view-text'>${config.text}</p>
+                <p class='magpie-view-text'>Wie gut fühlen Sie sich mit Ihrer Entscheidung,${config.data[CT].choices[action]}</p>
                 </div>
+
                 <br/>
                 <br/>
 
@@ -199,81 +284,6 @@ const dilemma_rating_custom_view = function(config, CT) {
     return view;
 };
 
-const dilemma_custom_view = function(config, CT) {
-    const view = {
-        name: config.name,
-        CT: 0,
-        trials: config.trials,
-
-        render: function (CT, magpie) {
-            let response = magpie.trial_data[0].topIssue -1
-            let topics = [
-                'Klimapolitik',
-                'Migrationspolitik',
-                'Feminismus',
-                'Legalisierung von Cannabis',
-                'Rentenalter',
-                'Fleischkonsum',
-                'Bildung',
-                'Abtreibung'
-            ]
-            let topic = topics[response]
-            let topic2 = ''
-            // Dynamic display of 2nd sentence dependend on exp. condition
-            let cond = config.data[CT].id
-            if (cond > 4) {
-                topic2 = topic
-            };
-
-            $("main").html(`<div class='magpie-view'>
-                <h1 class='magpie-view-title'>${config.title}</h1>
-
-                <div class='magpie-view-stimulus-container-custom'>
-                <p class='magpie-view-text'>${config.text}</p>
-                <br/>
-                <br/>
-                <p class='magpie-view-text'>${config.data[CT].chunk1}${topic}${config.data[CT].chunk2}</p>
-                <br/>
-                <p class='magpie-view-text'>${config.data[CT].chunk3}${topic2}${config.data[CT].chunk4}</p>
-                </div>
-
-                <div class='magpie-view-answer-container'>
-                <label id="1" class='magpie-response-sentence'>${config.data[CT].option1}</label>
-                <label id="2" class='magpie-response-sentence'>${config.data[CT].option2}</label>
-                <label id="3" class='magpie-response-sentence'>${config.data[CT].option3}</label>
-                <label id="4" class='magpie-response-sentence'>${config.data[CT].option4}</label>
-                <label id="5" class='magpie-response-sentence'>${config.data[CT].option5}</label>
-                <label id="6" class='magpie-response-sentence'>${config.data[CT].option6}</label>
-                </div>
-
-                </div>`);
-
-            const handle_click = function(e) {
-                let trial_data = {
-                    trial_name: config.name,
-                    trial_number: CT + 1,
-                    //condition: config.data[CT].id,
-                    ingroupNorm: config.data[CT].ingroupNorm,
-                    bothShown: config.data[CT].bothShown,
-                    ingroupFirst: config.data[CT].ingroupFirst,
-                    response: e.target.id
-                };
-
-                magpie.trial_data.push(trial_data);
-                magpie.findNextView();
-            };
-
-            $('#1').on("click", handle_click);
-            $('#2').on("click", handle_click);
-            $('#3').on("click", handle_click);
-            $('#4').on("click", handle_click);
-            $('#5').on("click", handle_click);
-            $('#6').on("click", handle_click);
-        },
-    };
-    return view;
-};
-
 const understanding_custom_view = function(config, CT) {
     const view = {
         name: config.name,
@@ -290,10 +300,10 @@ const understanding_custom_view = function(config, CT) {
                 </div>
 
                 <div class='magpie-view-answer-container'>
-                <label id="1" class='magpie-response-sentence'>${config.data[CT].option1}</label>
-                <label id="2" class='magpie-response-sentence'>${config.data[CT].option2}</label>
-                <label id="3" class='magpie-response-sentence'>${config.data[CT].option3}</label>
-                <label id="4" class='magpie-response-sentence'>${config.data[CT].option4}</label>
+                <label id="1" class='magpie-response-sentence-custom'>${config.data[CT].option1}</label>
+                <label id="2" class='magpie-response-sentence-custom'>${config.data[CT].option2}</label>
+                <label id="3" class='magpie-response-sentence-custom'>${config.data[CT].option3}</label>
+                <label id="4" class='magpie-response-sentence-custom'>${config.data[CT].option4}</label>
                 </div>
 
                 </div>`);
