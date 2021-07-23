@@ -207,7 +207,7 @@ const dilemma_custom_view = function(config, CT) {
 
         render: function (CT, magpie) {
             let response = magpie.trial_data[0].response -1
-            let groups = [
+            let topics = [
                 'Klimapolitik',
                 'Migrationspolitik',
                 'Feminismus',
@@ -217,12 +217,12 @@ const dilemma_custom_view = function(config, CT) {
                 'Bildung',
                 'Abtreibung'
             ]
-            let group = groups[response]
-            let group2 = ''
+            let topic = topics[response]
+            let topic2 = ''
             // Dynamic display of 2nd sentence dependend on exp. condition
             let cond = config.data[CT].id
             if (cond > 2) {
-                group2 = group
+                topic2 = topic
             };
 
             $("main").html(`<div class='magpie-view'>
@@ -232,9 +232,9 @@ const dilemma_custom_view = function(config, CT) {
                 <p class='magpie-view-text'>${config.text}</p>
                 <br/>
                 <br/>
-                <p class='magpie-view-text'>${config.data[CT].chunk1}${group}${config.data[CT].chunk2}</p>
+                <p class='magpie-view-text'>${config.data[CT].chunk1}${topic}${config.data[CT].chunk2}</p>
                 <br/>
-                <p class='magpie-view-text'>${config.data[CT].chunk3}${group2}${config.data[CT].chunk4}</p>
+                <p class='magpie-view-text'>${config.data[CT].chunk3}${topic2}${config.data[CT].chunk4}</p>
                 </div>
 
                 <div class='magpie-view-answer-container'>
