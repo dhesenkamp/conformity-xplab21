@@ -252,7 +252,10 @@ const dilemma_custom_view = function(config, CT) {
                 let trial_data = {
                     trial_name: config.name,
                     trial_number: CT + 1,
-                    condition: config.data[CT].id,
+                    //condition: config.data[CT].id,
+                    ingroupNorm: config.data[CT].ingroupNorm,
+                    bothShown: config.data[CT].bothShown,
+                    ingroupFirst: config.data[CT].ingroupFirst,
                     response: e.target.id
                 };
 
