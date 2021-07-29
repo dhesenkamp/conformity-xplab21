@@ -196,7 +196,7 @@ const dilemma_rating = dilemma_rating_custom_view(
 const control_trial = understanding_custom_view(
   {
     trials: understanding.choice.length,
-    title: 'Platzhalter',
+    title: 'Die vorherige Studie',
     name: 'control',
     text: `Wie zuvor erwähnt, wird dieses Experiment in Folge einer anderen Studie durchgeführt. Mit
             den Informationen, die Sie über die vorherige Studie bekommen haben, welche Aussage trifft

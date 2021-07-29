@@ -18,7 +18,7 @@ const issue_choice_custom_view = function(config, CT) {
             $("main").html(`<div class='magpie-view'>
                 <h1 class='magpie-view-title'>${config.title}</h1>
 
-                <div class='magpie-view-stimulus-container'>
+                <div class='magpie-view-stimulus-container-custom'>
                 <p class='magpie-view-text'>${config.text}</p>
                 <br/>
                 </div>
