@@ -337,14 +337,14 @@ const double_dropdown_custom = function(config, CT) {
         CT: 0,
         trials: config.trials,
         groups: [
-            ['KlimaaktivistInnen', 'Klimaleugnern'],
-            ['Migrationsbefürwortenden', 'Migrationsgegnern'],
-            ['FeministInnen', 'Nicht-Feministen'],
-            ['Legalisierungsbefürwortenden', 'Legalisierungsgegnern'],
-            ['Befürwortenden zur Beibehaltung des Rentenalters', 'Rentenalter-Anhebungs-Befürwortern'],
+            ['Klimaaktivisten', 'Klimaleugnern'],
+            ['Migrationsbefürwortern', 'Migrationsgegnern'],
+            ['Feministen', 'Nicht-Feministen'],
+            ['Legalisierungsbefürwortern', 'Legalisierungsgegnern'],
+            ['Befürwortern zur Beibehaltung des Rentenalters', 'Rentenalter-Anhebungs-Befürwortern'],
             ['Veganern und Vegetariern', 'Omnivoren'],
-            ['G8-Befürwortenden', 'G9-Befürwortenden'],
-            ['Pro-Choice-Befürwortenden', 'Pro-Life-Befürwortenden'],
+            ['G8-Befürwortern', 'G9-Befürwortern'],
+            ['Pro-Choice-Befürwortern', 'Pro-Life-Befürwortern'],
         ],
 
         render: function(CT, magpie) {

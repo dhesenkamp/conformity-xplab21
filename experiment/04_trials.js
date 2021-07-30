@@ -188,10 +188,10 @@ const dilemma = {
 const understanding = {
     choice: [
         {
-            option1: 'Die Teilnehmer nahmen Stellung zu einem moralischen Dilemma.',
-            option2: 'Die Teilnehmer sollten das Experiment mit geschlossenen Augen absolvieren.',
-            option3: 'Die Teilnehmer mussten Haustiere nach Niedlichkeit bewerten.',
-            option4: 'Die Daten aus dem vorherigen Experiment wurden nicht gespeichert.',
+            option1: 'Die Teilnehmer entschieden sich für ihre bevorzugte Handlung.',
+            option2: 'Wegen eines Computerfehlers wurden die Teilnehmer nicht gleichmäßig aufgeteilt um sich vorzustellen, die verschiedenen Handlung auszuführen.',
+            option3: 'Es wurden während des Experiments keine Daten gespeichert.',
+            option4: 'Die Teilnehmer absolvierten das Experiment mit geschlossenen Augen.',
             // correct: option 1
             expected: 1,
         }
@@ -202,14 +202,14 @@ const group_identity = {
     check: [
         {
             groups: [
-                ['Klimaaktivist:innen', 'Klimakrisenleugnern'],
-                ['Migrationsgegnern', 'Migrationsbefürwortenden',],
-                ['Feminist:innen', 'Nicht-Feministen'],
-                ['Legalisierungsbefürwortenden', 'Legalisierungsgegnern'],
-                ['Befürwortenden zur Anhebung des Rentenalters', 'Befürwortenden zur Beibehaltung des Rentenalters'],
+                ['Klimaaktivisten', 'Klimaleugnern'],
+                ['Migrationsbefürwortern', 'Migrationsgegnern'],
+                ['Feministen', 'Nicht-Feministen'],
+                ['Legalisierungsbefürwortern', 'Legalisierungsgegnern'],
+                ['Befürwortern zur Beibehaltung des Rentenalters', 'Rentenalter-Anhebungs-Befürwortern'],
                 ['Veganern und Vegetariern', 'Omnivoren'],
-                ['G8-Befürwortenden', 'G9-Befürwortenden'],
-                ['Pro-Choice-Befürwortenden', 'Pro-Life-Befürwortenden'],
+                ['G8-Befürwortern', 'G9-Befürwortern'],
+                ['Pro-Choice-Befürwortern', 'Pro-Life-Befürwortern'],
             ],
             choice: [
                 'Stimme gar nicht zu',
@@ -220,9 +220,6 @@ const group_identity = {
                 'Stimme zu',
                 'Stimme voll zu',
             ],
-            // not used
-            statement1: 'Ich würde mich als Teil der Gruppe der [ingroup] bezeichnen.',
-            statement2: 'Ich würde mich als Teil der Gruppe der [outgroup] bezeichnen.',
         },
     ],
 };
