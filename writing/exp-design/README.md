@@ -1,3 +1,7 @@
 # Experimental Design
 
-[Experimental design](https://docs.google.com/document/d/1S7nyP9rwfJwY5D7-UHAcCHOuor9c3zCs8DOGnvblIhU/edit?usp=sharing)
+This folder contains the experimental design document. 
+
+The experimental design explains the background of the study, hypotheses, and design of the experiment including materials as well as procedure.  
+
+The materials used in the experiment can also be found seperately in the materials folder.
