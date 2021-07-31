@@ -38,17 +38,17 @@ fit_herding_prior=stan(model_code=model_herding_prior, pars=c("bOut","bBoth","bI
 #Extract samples for plotting for each experiment
 extracted_SCT_priors <- data.frame(rstan::extract(fit_SCT_prior)[c("bIn","bBoth","bOut")], model="Self-categorization", info="prior")
 extracted_herding_priors <- data.frame(rstan::extract(fit_herding_prior)[c("bIn","bBoth","bOut")], model="Alternative", info="prior")
-extracted_SCT_posteriors_list <- lapply(c(fit_SCT_1, fit_SCT_2, fit_SCT_3, fit_SCT_4), function(fit_x){
+extracted_SCT_posteriors <- lapply(c(fit_SCT), function(fit_x){
   return(data.frame(rstan::extract(fit_x)[c("bIn","bBoth","bOut")], model="Self-categorization", info="posterior"))
 })
-extracted_herding_posteriors_list <- lapply(c(fit_herding_1, fit_herding_2, fit_herding_3, fit_herding_4), function(fit_x){
+extracted_herding_posteriors <- lapply(c(fit_herding), function(fit_x){
   return(data.frame(rstan::extract(fit_x)[c("bIn","bBoth","bOut")], model="Alternative", info="posterior"))
 })
 
 #Create plots for each experiment
-prior_posterior_plots <- lapply(1:4, function(x){
+prior_posterior_plots <- lapply(1, function(x){
   #Combine needed data
-  prior_posterior_data <- rbind(extracted_SCT_priors, extracted_herding_priors, extracted_SCT_posteriors_list[[x]], extracted_herding_posteriors_list[[x]])
+  prior_posterior_data <- rbind(extracted_SCT_priors, extracted_herding_priors, extracted_SCT_posteriors[[x]], extracted_herding_posteriors[[x]])
   prior_posterior_data <- gather(prior_posterior_data, key=parameter, value=value, -model, -info)
   prior_posterior_data$parameter <- as.factor(prior_posterior_data$parameter)
   #Find densities for plotting (I am doing this instead of using geom_violin because geom_violin does not maintain consistent areas across plots/facets)
@@ -76,7 +76,6 @@ prior_posterior_plots <- lapply(1:4, function(x){
 })
 
 
-for(i in 1:4){
-  ggsave(file=paste("prior_posterior_plot_", i, ".png", sep=""), plot=prior_posterior_plots[[i]], width=18, height=10, units="cm", dpi=600)
-}
+
+ggsave(file=paste("prior_posterior_plot_", i, ".png", sep=""), plot=prior_posterior_plots[[i]], width=18, height=10, units="cm", dpi=600)
   
