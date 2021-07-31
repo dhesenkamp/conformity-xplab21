@@ -176,10 +176,10 @@ const dilemma_choice = dilemma_custom_view(
     name: 'dilemma',
     title: 'Das Dilemma',
     text: `Stellen Sie sich vor, Sie hätten einen Mann dabei beobachtet, eine Bank auszurauben. 
-    Allerdings, beobachteten Sie ihn dann dabei, wie er etwas Unerwartetes mit dem Geld machte. 
-    Er spendete das gesamte Geld an ein heruntergekommenes Waisenhaus, wo es sehr gut gebraucht werden konnte. 
-    Sie müssen entscheiden, ob Sie die Polizei verständigen und den Dieb melden 
-    oder ob Sie die Sache auf sich beruhen lassen und den Dieb laufen lassen.`,
+            Allerdings beobachteten Sie ihn dann dabei, wie er etwas Unerwartetes mit dem Geld machte. 
+            Er spendete das gesamte Geld an ein heruntergekommenes Waisenhaus, wo es sehr gut gebraucht werden konnte. 
+            Sie müssen entscheiden, ob Sie die Polizei verständigen und den Dieb melden 
+            oder ob Sie die Sache auf sich beruhen lassen und den Dieb laufen lassen.`,
     data: _.shuffle(dilemma.choice),
   },
 );
