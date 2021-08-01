@@ -22,8 +22,7 @@ theme_set(theme_bw(18)+
                     text=element_text(family="serif")))
 
 # Set working directory (getwd() to check, change to own respective local directory)
-setwd('/Users/hesenkamp/Documents/GDrive/02 UNI/04 - SS21/Experimental Psychology Lab/conformity-xplab21/analysis/pilot')
-
+setwd('/analysis/pilot')
 # Read in data
 full_data <- read.csv('test-data.csv', sep=';', header=TRUE)
 
@@ -118,17 +117,15 @@ bf(marg_lik_herding, marg_lik_SCT)
 #Create prior-posterior plots-------
 source("plot_priors_posteriors.R")
 
-# !! still needs updating
 #Plot which issues people cared about and the extent to which they agreed with them-------
-issue_plot <- ggplot(data3, aes(x=factor(topIssue, labels = c("Gun \n control", 
-                                                                "Feminism", 
-                                                                "Donald \n Trump", 
-                                                                "Immigration",
-                                                                "Transgender \n rights",
-                                                                "Drug \n legalization",
-                                                                "Colin \n Kaepernick",
-                                                                "Fur is \n wrong",
-                                                                "Religion \n Tax")),
+issue_plot <- ggplot(tidy_data, aes(x=factor(topIssue, labels = c("Klimapolitik", 
+                                                                "Migrations- \npolitik", 
+                                                                "Feminismus", 
+                                                                "Legalisierung \nCannabis",
+                                                                "Rentenalter",
+                                                                "Fleischkonsum",
+                                                                "Bildung",
+                                                                "Abtreibung")),
                                   y = topIssueRating, 
                                   colour = factor(topIssue),
                                   fill = factor(topIssue))) + 
@@ -136,7 +133,7 @@ issue_plot <- ggplot(data3, aes(x=factor(topIssue, labels = c("Gun \n control",
     labs(x = "Issue", y="Agreement") + 
     guides(color=FALSE, fill=FALSE)+
     scale_y_continuous(breaks=c(0,5,10), labels = c("Strongly disagree", "Neutral", "Strongly agree"))
-ggsave("issue_plot_3.png", issue_plot_3, width=34, height=13, units="cm")
+ggsave("issue_plot.png", issue_plot, width=34, height=13, units="cm")
 
 
 
