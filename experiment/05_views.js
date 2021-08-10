@@ -154,11 +154,11 @@ const dilemma_instructions = magpieViews.view_generator(
     trials: 1,
     name: 'instructions_moral_dilemma',
     title: 'Anweisungen',
-    text: `Wir führen dieses Experiment als Folgestudie eines bereits veröffentlichten Papers durch.
-            Dieses Paper beschäftigte sich mit der Frage, wie sich Menschen in moralischen Dilemmata fühlen.
+    text: `Wir führen dieses Experiment als Folgestudie einer bereits veröffentlichten Studie durch.
+            Diese Studie beschäftigte sich mit der Frage, wie sich Menschen in moralischen Dilemmata fühlen.
             <br/>
             <br/>
-            In dem Paper wurde ein moralisches Dilemma vorgestellt, zu welchem den Teilnehmern
+            In der Studie wurde ein moralisches Dilemma vorgestellt, zu welchem den Teilnehmern
             zwei mögliche Handlungsschritte präsentiert wurden. Die Teilnehmer suchten sich den Handlungsschritt aus,
             den sie bevorzugten, und sollten angeben, wie sie sich mit dieser Entscheidung fühlten.
             <br/>
