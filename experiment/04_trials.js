@@ -24,7 +24,7 @@ const social_issues = {
                 'Eine Frauenquote in allen Institutionen ist essentiell für Gleichberechtigung.',
                 'Cannabis sollte für Erwachsene frei zugänglich sein.',
                 'Das Rentenalter sollte angehoben werden.',
-                'Der Fleischkonsum muss deutlich reduziert werden, daher esse ich kein Fleisch.',
+                'Auf Fleischkonsum muss gänzlich verzichtet werden.',
                 'G8 sollte in ganz Deutschland eingeführt werden.',
                 'Jede Frau sollte die Möglichkeit haben, ihr Kind bis zum 3. Schwangerschaftsmonat abtreiben zu können.'
             ],
