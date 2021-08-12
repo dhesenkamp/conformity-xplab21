@@ -402,7 +402,7 @@ const double_dropdown_custom = function(config, CT) {
                 <option value=7>${config.data[CT].choice[6]}</option>
             </select>
             </p>
-            <button id='next' class='magpie-view-button magpie-nodisplay'>Next</button>
+            <button id='next' class='magpie-view-button magpie-nodisplay'>Weiter</button>
             </div>
 
             </div>`);

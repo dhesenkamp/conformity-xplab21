@@ -22,11 +22,11 @@ const social_issues = {
                 'Zum Erreichen des 1,5°-Grad-Ziels müssen strengere Maßnahmen ergriffen werden.',
                 'In Deutschland muss es eine Migrationsobergrenze geben.',
                 'Eine Frauenquote in allen Institutionen ist essentiell für Gleichberechtigung.',
-                'Cannabis sollte für Erwachsene frei zugänglich sein.',
-                'Das Rentenalter sollte angehoben werden.',
+                'Cannabis muss für Erwachsene frei zugänglich sein.',
+                'Das Rentenalter muss angehoben werden.',
                 'Auf Fleischkonsum muss gänzlich verzichtet werden.',
-                'G8 sollte in ganz Deutschland eingeführt werden.',
-                'Jede Frau sollte die Möglichkeit haben, ihr Kind bis zum 3. Schwangerschaftsmonat abtreiben zu können.'
+                'G8 muss in ganz Deutschland eingeführt werden.',
+                'Jede Frau muss die Möglichkeit haben, ihr Kind bis zum 3. Schwangerschaftsmonat abtreiben zu können.'
             ],
         },
     ],
@@ -36,7 +36,8 @@ const social_issues = {
 // Throughout the trials, the
 //  i. ingroup statements
 //  ii. outgroup statements
-//  iii. oder of in-/outgroup statements changes.
+//  iii. order of in-/outgroup statements 
+// change.
 const dilemma = {
     choice: [
         {
