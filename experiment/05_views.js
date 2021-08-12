@@ -89,7 +89,7 @@ const thanks = magpieViews.view_generator(
   {
   trials: 1,
   name: 'thanks',
-  title: 'Thank you for taking part in this experiment!',
+  title: 'Vielen Dank für Ihre Teilnahme an diesem Experiment!',
 
   prolificConfirmText: 'Press the button'
   },
