@@ -22,8 +22,9 @@ theme_set(theme_bw(18)+
                     text=element_text(family="serif")))
 
 # Set working directory (getwd() to check, change to own respective local directory)
-getwd()
+#getwd()
 setwd('/Users/hesenkamp/Documents/GDrive/02 UNI/04 - SS21/Experimental Psychology Lab/conformity-xplab21/analysis/final')
+
 # Read in data
 full_data <- read.csv('results.csv', sep=';', header=TRUE)
 
@@ -42,10 +43,10 @@ tidy_data <- full_data %>%
 # Remove na columns resulting from pivoting, remove columns not needed for analysis
 tidy_data[,which(unlist(lapply(tidy_data, function(x)!all(is.na(x))))),with=F]
 tidy_data <- tidy_data %>% 
-    select(where(function(x) any(!is.na(x))), -'startDate', -'startTime', -'endTime', -'timeSpent',
-           -'submission_id.issue_choice', -'submission_id.issue_rating', -'submission_id.dilemma',
-           -'submission_id.dilemma_rating', -'submission_id.control', -'submission_id.group_identity',
-           -'education', -'languages', -'experiment_id') %>% 
+    select(where(function(x) any(!is.na(x))), -'comments', -'trial_number', -'startDate', -'startTime',
+           -'endTime', -'timeSpent', -'submission_id.issue_choice', -'submission_id.issue_rating',
+           -'submission_id.dilemma', -'submission_id.dilemma_rating', -'submission_id.control',
+           -'submission_id.group_identity', -'education', -'languages', -'experiment_id') %>% 
     mutate(
         condition = ifelse(
             ingroupNorm.dilemma==1 & bothShown.dilemma==0, 
@@ -58,6 +59,8 @@ tidy_data <- tidy_data %>%
                     'Ingroup norm favoured \n leaving robber alone \n Both norms shown',
                     'Ingroup norm favoured \n calling the police \n Both norms shown'
                 ))))
+
+tidy_data
 
 # Renaming column names to original variable names
 colnames(tidy_data) <- c('age', 'gender', 'topIssue', 'topIssueRating', 'ingroupNorm',
@@ -76,8 +79,24 @@ usable_data <- filter(tidy_data,
                       topIssueRating != 5 | is.na(topIssueRating),
                       )
 
+# Number of (usable) submissions
+nr_subs <- tidy_data %>% 
+    count()
+
+nr_usable_subs <- usable_data %>% 
+    count()
+
+# Removals due to failure of understanding check OR indecisive issue rating
+nr_removals <- nr_subs - nr_usable_subs
+
 # Demographic summary
-demographics_summary <- tidy_data %>% 
+demographics_data <- filter(usable_data,
+                            # Use only submissions with demographic detail
+                            is.na(age) == FALSE,
+                            is_empty(gender) == F)
+
+
+demographics_summary <- demographics_data %>% 
     summarise(
         mean_age = mean(age),
         min_age = min(age),
@@ -88,6 +107,7 @@ demographics_summary <- tidy_data %>%
         N = length(age),
         prop_female = (N-num_males) / N
 )
+demographics_summary
 
 #Frequentist Analysis----------------
 ordinal_1 <- clm(as.factor(response)~ingroupNorm*bothShown, data=usable_data)
@@ -119,23 +139,19 @@ bf(marg_lik_herding, marg_lik_SCT)
 source("plot_priors_posteriors.R")
 
 #Plot which issues people cared about and the extent to which they agreed with them-------
-issue_plot <- ggplot(tidy_data, aes(x=factor(topIssue, labels = c("Klimapolitik", 
-                                                                "Migrations- \npolitik", 
-                                                                "Feminismus", 
-                                                                "Legalisierung \nCannabis",
-                                                                "Rentenalter",
-                                                                "Fleischkonsum",
-                                                                "Bildung",
-                                                                "Abtreibung")),
+issue_plot <- ggplot(tidy_data, aes(x=factor(topIssue,labels = c("Climate \npolicy",
+                                                                  "Migration \npolicy",
+                                                                  "Feminism",
+                                                                  "Cannabis \nlegalisation",
+                                                                  "Pension \nage",
+                                                                  #"Education", # this topic wasn't chosen at all
+                                                                  "Abortion",
+                                                                  "Meat \nconsumption")),
                                   y = topIssueRating, 
                                   colour = factor(topIssue),
                                   fill = factor(topIssue))) + 
     geom_dotplot(binaxis = "y", stackdir = "center", binwidth = 0.15) +
     labs(x = "Issue", y="Agreement") + 
-    guides(color=FALSE, fill=FALSE)+
+    guides(color=FALSE, fill=FALSE) +
     scale_y_continuous(breaks=c(0,5,10), labels = c("Strongly disagree", "Neutral", "Strongly agree"))
 ggsave("issue_plot.png", issue_plot, width=34, height=13, units="cm")
-
-
-
-
