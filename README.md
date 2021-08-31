@@ -19,7 +19,7 @@ To run it offline, clone the repository, run `npm install`and open `index.html`.
 
 ### Pre-registration
 
-Pre-egistration can be found [here].(https://docs.google.com/document/d/1CCQkq4oDIhbHExP1hN3MqmDhb2hkvaL9vd0gSe-Q7Lw/edit?usp=sharing)
+Pre-egistration can be found [here](https://docs.google.com/document/d/1CCQkq4oDIhbHExP1hN3MqmDhb2hkvaL9vd0gSe-Q7Lw/edit?usp=sharing).
 
 
 ### Experimental Design
