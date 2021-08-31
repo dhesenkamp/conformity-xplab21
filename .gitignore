@@ -4,3 +4,9 @@
 
 # Hosting on Netlify automatically creates this folder
 /experiment/node_modules
+
+# R workspace image
+/analysis/final/.Rhistory
+/analysis/final/.RData
+/analysis/pilot/.Rhistory
+/analysis/pilot/.RData
