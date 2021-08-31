@@ -2,7 +2,7 @@
 
 This folder contains materials used for the implementation of the experiment.
 
-The materials stored in 'materials_german.pdf' were used in the experiment and the materials in 'materials_english.pdf' serve as a translation of the German materials. 'example-transcript.pdf' transcribes one possible way of going through the experiment with all dialogues and options.
+The materials stored in 'materials_german.pdf' were used in the experiment and the materials in 'materials_english.pdf' serve as a translation of the German materials. 'example-transcript.docx' transcribes one possible way of going through the experiment with all dialogues and options.
 
 The moral dilemma that was employed in the study is the same that was used by Pryor et al. (2019) and it can also be found in their [OSF repository](https://osf.io/tgf96/).
 
