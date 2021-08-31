@@ -1,1 +1,1 @@
-[Influence of a consistent minority on the responses of a majority in a color perception task] (https://www.researchgate.net/publication/17796328_Influence_of_a_Consistent_Minority_on_the_Responses_of_a_Majority_in_a_Color_Perception_Task)
+[Influence of a consistent minority on the responses of a majority in a color perception task](https://www.researchgate.net/publication/17796328_Influence_of_a_Consistent_Minority_on_the_Responses_of_a_Majority_in_a_Color_Perception_Task)
