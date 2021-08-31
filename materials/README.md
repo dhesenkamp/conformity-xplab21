@@ -7,5 +7,5 @@ The materials stored in 'materials_german.pdf' were used in the experiment and t
 The moral dilemma that was employed in the study is the same that was used by Pryor et al. and it can also be found in their OSF repository.
 
 Credit:
-Pryor, C., Howe, P. D. L., & Perfors, A. (2019, June 27). Outgroup Descriptive Norms.
+Pryor, C., Perfors, A., & Howe, P. D. L. (2019, June 27). Outgroup Descriptive Norms.
 https://doi.org/10.17605/OSF.IO/TGF96
