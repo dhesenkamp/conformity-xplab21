@@ -1,0 +1,1 @@
+[Culture and the self: Implications for cognition, emotion, and motivation] (https://psycnet.apa.org/record/1991-23978-001)
