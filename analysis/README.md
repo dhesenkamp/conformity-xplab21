@@ -1,6 +1,6 @@
 # Analysis
 
-This subfolder contains all relevant files for the statistical analysis of the experiment, i.e. the collected data (anonymised) and the analysis script including all functions used. The script is strongly based on the analysis originally run by Perfors, Pryor, and Howe (2019). 
+This subfolder contains all relevant files for the statistical analysis of the experiment, i.e. the collected data (anonymised) and the analysis script including all functions used. The script is strongly based on the analysis originally run by Perfors & Pryor (2019). 
 
 This link leads directly to their repository (as also mentioned in their publication): [osf.io/tgf96/](https://osf.io/tgf96/)
 
