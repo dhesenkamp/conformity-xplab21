@@ -4,7 +4,7 @@ All writing goes in here. Down below are links to the most recent version of eac
 
 ### Pre-registration
 
-Pre-egistration can be found [here].(https://docs.google.com/document/d/1CCQkq4oDIhbHExP1hN3MqmDhb2hkvaL9vd0gSe-Q7Lw/edit?usp=sharing)
+Pre-registration can be found [here](https://docs.google.com/document/d/1CCQkq4oDIhbHExP1hN3MqmDhb2hkvaL9vd0gSe-Q7Lw/edit?usp=sharing).
 
 ### Experimental Design
 
@@ -18,4 +18,4 @@ To the [doc](https://docs.google.com/document/d/1S7nyP9rwfJwY5D7-UHAcCHOuor9c3zC
 
 The final report contains a lot of details on the rationale behind this replication study and more info on how exactly we conducted the experiment, including data preparation and analysis. It also contains a discussion of our results.
 
-The report can be found [here](https://docs.google.com/document/d/1hUTgHQijjnyKsgczAsuLZj5T_Y_WvzVF_I2NYsoAy_I/edit?usp=sharing)
+The report can be found [here](https://docs.google.com/document/d/1hUTgHQijjnyKsgczAsuLZj5T_Y_WvzVF_I2NYsoAy_I/edit?usp=sharing).
