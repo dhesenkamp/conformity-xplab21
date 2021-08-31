@@ -21,9 +21,7 @@ theme_set(theme_bw(18)+
                     axis.line=element_line(),
                     text=element_text(family="serif")))
 
-# Set working directory (getwd() to check, change to own respective local directory)
-#getwd()
-setwd('/Users/hesenkamp/Documents/GDrive/02 UNI/04 - SS21/Experimental Psychology Lab/conformity-xplab21/analysis/final')
+setwd('/analysis/final')
 
 # Read in data
 full_data <- read.csv('results.csv', sep=';', header=TRUE)
@@ -60,8 +58,6 @@ tidy_data <- tidy_data %>%
                     'Ingroup norm favoured \n calling the police \n Both norms shown'
                 ))))
 
-tidy_data
-
 # Renaming column names to original variable names
 colnames(tidy_data) <- c('age', 'gender', 'topIssue', 'topIssueRating', 'ingroupNorm',
                          'bothShown', 'ingroupFirst', 'response', 'rating', 
@@ -70,7 +66,10 @@ colnames(tidy_data) <- c('age', 'gender', 'topIssue', 'topIssueRating', 'ingroup
 
 tidy_data$responseLabels <- ordered(
     tidy_data$response,
-    labels = c("1 = Definitely call the police", "2", "3", "4", "5", "6 = Definitely leave the robber alone")     )
+    labels = c("1 = Definitely call the police", 
+               "2", "3", "4", "5", 
+               "6 = Definitely leave the robber alone")
+    )
 
 # Filter out unusable data
 usable_data <- filter(tidy_data,
@@ -81,13 +80,33 @@ usable_data <- filter(tidy_data,
 
 # Number of (usable) submissions
 nr_subs <- tidy_data %>% 
-    count()
+    count() %>% 
+    print()
 
 nr_usable_subs <- usable_data %>% 
-    count()
+    count() %>% 
+    print()
 
-# Removals due to failure of understanding check OR indecisive issue rating
-nr_removals <- nr_subs - nr_usable_subs
+# Number of removals due to failure of understanding check OR indecisive issue rating
+nr_removals <- nr_subs - nr_usable_subs %>% 
+    print()
+
+# Equal assignment of conditions
+cond <- usable_data %>% 
+    count(ingroupNorm, bothShown) %>% 
+    print()
+
+prop_bothShown <- ((count(usable_data) - count(usable_data[bothShown == 0])) / count(usable_data)) %>% 
+    print()
+
+# Most choosen topics
+climate <- usable_data %>% 
+    count(topIssue == 1) %>% 
+    print()
+
+abortion <- usable_data %>% 
+    count(topIssue == 7) %>% 
+    print()
 
 # Demographic summary
 demographics_data <- filter(usable_data,
@@ -109,7 +128,7 @@ demographics_summary <- demographics_data %>%
 )
 demographics_summary
 
-#Frequentist Analysis----------------
+#Frequentist Analysis ----
 ordinal_1 <- clm(as.factor(response)~ingroupNorm*bothShown, data=usable_data)
 ordinal_1
 
@@ -117,8 +136,8 @@ source("functions/produce_mean_and_count_bar_plot.R")
 plot_1 <- produce_mean_and_count_bar_plot(usable_data, bar_width_means=0.5, bar_width_response=0.3)
 ggsave(file="plot_1.png", plot=plot_1, width=190, height = 110, units="mm")  
 
-#Bayesian analysis------------
-#--Set up data for stan.
+#Bayesian analysis ----
+# Set up data for STAN
 usable_data <- usable_data %>%
     select(response, ingroupNorm, bothShown, ingroupAgree, outgroupDisagree) #select relevant columns
 
@@ -126,20 +145,20 @@ usable_data <- usable_data %>%
 stan_data <- as.list(c(usable_data, N = dim(usable_data)[1]))
 stan_data
 
-#--Fit models
+# Fit models
 fit_SCT <- stan(file = "stan_models/SCT.stan", data=stan_data, iter=10000, chains=4, seed = 123, control=list(adapt_delta = 0.99))
 fit_herding <- stan(file = "stan_models/herding.stan", data=stan_data, iter=10000, chains=4, control=list(adapt_delta = 0.99))
 
-#--Compare models using Bayes Factors
+# Compare models using Bayes Factors
 marg_lik_SCT <- bridge_sampler(samples = fit_SCT)
 marg_lik_herding <- bridge_sampler(samples = fit_herding)
 bf(marg_lik_herding, marg_lik_SCT)
 
-#Create prior-posterior plots-------
+# Create prior-posterior plots
 source("plot_priors_posteriors.R")
 
-#Plot which issues people cared about and the extent to which they agreed with them-------
-issue_plot <- ggplot(tidy_data, aes(x=factor(topIssue,labels = c("Climate \npolicy",
+# Plot which issues people cared about and the extent to which they agreed with them
+issue_plot <- ggplot(usable_data, aes(x=factor(topIssue,labels = c("Climate \npolicy",
                                                                   "Migration \npolicy",
                                                                   "Feminism",
                                                                   "Cannabis \nlegalisation",

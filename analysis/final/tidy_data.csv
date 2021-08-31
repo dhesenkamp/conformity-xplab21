@@ -1,0 +1,265 @@
+"","age","gender","topIssue","topIssueRating","ingroupNorm","bothShown","ingroupFirst","response","rating","understandingCheckResponse","correct","identityIngroupResponse","identityOutgroupResponse","ingroupAgree","outgroupDisagree","condition","responseLabels"
+"1",57,"männlich",1,10,1,0,0,3,0,3,FALSE,6,2,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","3"
+"2",57,"männlich",2,10,0,1,1,4,0,1,TRUE,4,4,0,0,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"3",53,"weiblich",7,3,1,1,0,3,0,1,TRUE,5,3,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Both norms shown","3"
+"4",22,"männlich",7,1,1,0,0,4,0,1,TRUE,6,2,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","4"
+"5",21,"männlich",4,9,1,0,0,3,2,1,TRUE,6,2,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","3"
+"6",25,"weiblich",2,2,0,0,0,5,-1,1,TRUE,1,6,0,0,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","5"
+"7",21,"weiblich",1,10,0,1,1,3,1,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","3"
+"8",NA,"",5,1,0,0,0,5,3,1,TRUE,1,6,0,0,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","5"
+"9",24,"weiblich",1,10,1,0,0,3,-1,1,TRUE,5,2,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","3"
+"10",23,"männlich",8,10,0,0,0,3,0,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","3"
+"11",22,"weiblich",3,8,1,0,0,4,0,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","4"
+"12",23,"weiblich",1,10,0,0,0,5,3,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","5"
+"13",23,"weiblich",1,10,1,0,0,3,2,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","3"
+"14",51,"männlich",1,7,1,0,0,1,3,1,TRUE,2,1,0,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","1 = Definitely call the police"
+"15",26,"männlich",7,5,0,1,1,5,-1,2,FALSE,4,4,0,0,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","5"
+"16",21,"männlich",1,9,0,1,1,2,-1,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","2"
+"17",21,"weiblich",7,4,0,1,1,4,-1,1,TRUE,5,5,1,0,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"18",50,"männlich",1,10,0,0,0,3,3,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","3"
+"19",47,"weiblich",7,5,1,0,0,4,2,1,TRUE,6,3,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","4"
+"20",25,"männlich",8,3,0,1,1,1,-3,1,TRUE,7,3,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","1 = Definitely call the police"
+"21",21,"weiblich",7,0,0,0,0,3,-1,1,TRUE,6,2,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","3"
+"22",22,"männlich",7,10,0,0,0,5,2,1,TRUE,6,2,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","5"
+"23",21,"weiblich",1,7,1,0,0,4,2,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","4"
+"24",21,"männlich",1,8,0,0,0,3,0,1,TRUE,4,1,0,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","3"
+"25",20,"weiblich",1,10,0,1,1,5,1,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","5"
+"26",23,"weiblich",1,10,0,1,1,3,-1,3,FALSE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","3"
+"27",20,"männlich",1,10,1,0,0,3,-1,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","3"
+"28",17,"weiblich",2,3,0,1,1,4,-1,1,TRUE,2,5,0,0,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"29",23,"weiblich",1,9,0,0,0,4,-1,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","4"
+"30",29,"männlich",1,10,0,1,1,5,3,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","5"
+"31",28,"männlich",7,8,0,1,0,4,1,3,FALSE,4,4,0,0,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"32",35,"männlich",7,2,1,0,0,4,1,1,TRUE,2,2,0,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","4"
+"33",29,"männlich",1,10,0,1,0,6,3,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","6 = Definitely leave the robber alone"
+"34",27,"männlich",1,10,1,1,0,5,3,2,FALSE,5,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Both norms shown","5"
+"35",55,"männlich",1,10,0,0,0,2,2,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","2"
+"36",28,"weiblich",1,10,1,1,0,3,-1,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Both norms shown","3"
+"37",21,"weiblich",4,7,0,0,0,4,2,1,TRUE,6,2,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","4"
+"38",NA,"",1,10,1,0,0,6,3,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","6 = Definitely leave the robber alone"
+"39",39,"weiblich",7,0,0,0,0,2,2,1,TRUE,7,2,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","2"
+"40",39,"weiblich",3,8,1,0,0,2,2,1,TRUE,5,3,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","2"
+"41",58,"weiblich",7,2,0,1,1,2,1,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","2"
+"42",58,"männlich",5,6,0,0,0,1,3,1,TRUE,3,7,0,0,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","1 = Definitely call the police"
+"43",21,"weiblich",1,8,0,1,0,4,0,1,TRUE,2,1,0,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"44",50,"weiblich",7,0,0,0,0,4,0,1,TRUE,5,5,1,0,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","4"
+"45",49,"weiblich",1,10,1,0,0,2,2,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","2"
+"46",22,"männlich",1,8,1,0,0,5,-1,1,TRUE,4,1,0,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","5"
+"47",53,"weiblich",1,9,0,1,1,2,3,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","2"
+"48",21,"männlich",1,10,0,1,1,2,1,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","2"
+"49",20,"weiblich",1,7,0,1,1,4,2,1,TRUE,4,1,0,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"50",59,"weiblich",1,9,0,0,0,1,3,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","1 = Definitely call the police"
+"51",50,"männlich",1,10,0,0,0,2,2,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","2"
+"52",21,"weiblich",1,10,1,1,0,4,-1,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Both norms shown","4"
+"53",50,"männlich",4,8,1,0,0,2,2,3,FALSE,6,2,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","2"
+"54",40,"weiblich",7,8,1,1,0,4,1,3,FALSE,5,5,1,0,"Ingroup norm favoured 
+ leaving robber alone 
+ Both norms shown","4"
+"55",21,"weiblich",1,10,0,0,0,5,2,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","5"
+"56",23,"männlich",1,8,1,0,0,2,3,1,TRUE,2,1,0,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","2"
+"57",18,"weiblich",7,3,0,0,0,4,-1,1,TRUE,5,5,1,0,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","4"
+"58",24,"männlich",7,0,0,1,1,3,-1,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","3"
+"59",43,"weiblich",7,2,0,1,1,5,-1,3,FALSE,2,6,0,0,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","5"
+"60",21,"männlich",1,10,0,1,1,5,0,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","5"
+"61",21,"weiblich",1,10,0,1,0,4,2,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"62",22,"weiblich",8,8,1,0,0,4,2,1,TRUE,4,4,0,0,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","4"
+"63",52,"männlich",1,8,0,1,1,1,2,3,FALSE,6,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","1 = Definitely call the police"
+"64",49,"weiblich",1,9,0,1,1,2,-1,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","2"
+"65",22,"weiblich",1,8,0,1,0,3,-1,4,FALSE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","3"
+"66",51,"männlich",1,10,0,0,0,1,3,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","1 = Definitely call the police"
+"67",52,"weiblich",1,10,0,1,0,2,-1,2,FALSE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","2"
+"68",28,"weiblich",2,2,0,1,1,1,3,1,TRUE,2,3,0,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","1 = Definitely call the police"
+"69",20,"männlich",1,8,1,1,0,2,1,1,TRUE,4,1,0,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Both norms shown","2"
+"70",22,"weiblich",1,10,1,1,0,4,2,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Both norms shown","4"
+"71",21,"weiblich",1,10,1,1,0,6,3,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Both norms shown","6 = Definitely leave the robber alone"
+"72",21,"männlich",7,5,0,1,0,6,3,1,TRUE,4,4,0,0,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","6 = Definitely leave the robber alone"
+"73",21,"männlich",1,10,0,0,0,3,-2,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","3"
+"74",19,"männlich",1,10,1,0,0,4,1,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","4"
+"75",20,"männlich",1,8,0,1,1,5,2,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","5"
+"76",25,"weiblich",1,10,0,1,1,4,2,3,FALSE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"77",21,"weiblich",7,3,0,1,1,4,0,1,TRUE,4,4,0,0,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"78",21,"männlich",7,1,1,0,0,4,0,1,TRUE,4,4,0,0,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","4"
+"79",23,"männlich",1,8,0,1,0,5,2,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","5"
+"80",NA,"",1,10,0,1,1,4,0,1,TRUE,4,1,0,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","4"
+"81",22,"weiblich",1,10,1,0,0,3,-2,1,TRUE,5,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","3"
+"82",23,"weiblich",8,10,0,1,1,3,1,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","3"
+"83",23,"weiblich",1,10,1,0,0,6,3,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","6 = Definitely leave the robber alone"
+"84",20,"weiblich",1,10,0,0,0,1,-3,3,FALSE,5,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","1 = Definitely call the police"
+"85",21,"männlich",7,0,0,1,0,6,3,1,TRUE,5,3,1,1,"Ingroup norm favoured 
+ calling the police 
+ Both norms shown","6 = Definitely leave the robber alone"
+"86",23,"weiblich",1,10,0,0,0,6,3,1,TRUE,7,1,1,1,"Ingroup norm favoured 
+ calling the police 
+ Only ingroup norm shown","6 = Definitely leave the robber alone"
+"87",21,"weiblich",1,10,1,0,0,3,-1,1,TRUE,2,2,0,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","3"
+"88",28,"männlich",1,10,1,0,0,1,3,1,TRUE,6,1,1,1,"Ingroup norm favoured 
+ leaving robber alone 
+ Only ingroup norm shown","1 = Definitely call the police"
