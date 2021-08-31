@@ -4,7 +4,7 @@ All writing goes in here. Down below are links to the most recent version of eac
 
 ### Pre-registration
 
-Pre-egistration can be found [here].(https://docs.google.com/document/d/1CCQkq4oDIhbHExP1hN3MqmDhb2hkvaL9vd0gSe-Q7Lw/edit?usp=sharing)
+Preregistration can be found [here](https://docs.google.com/document/d/1CCQkq4oDIhbHExP1hN3MqmDhb2hkvaL9vd0gSe-Q7Lw/edit?usp=sharing).
 
 ### Experimental Design
 
