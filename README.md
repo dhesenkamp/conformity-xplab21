@@ -1,4 +1,4 @@
-# Conformity to Descriptive Norms - A Replication Study
+# A Replication Study to Evaluate People’s Conformity to Descriptive Norms
 
 ### XPLab 2021, Group 11
 
@@ -14,7 +14,7 @@ Besides the actual code used to implement experiment 1 of the above paper, this 
 - the analysis script including the (anonymized) data
 - the experimental design, materials, preregistration, and final report.
 
-To run the experiment online, follow this [link](https://xplab-experiment.netlify.app/).
+To run the experiment online, follow this [link](https://xplab-experiment.netlify.app/).  
 To run it offline, clone the repository, run `npm install`and open `index.html`.
 
 ### Pre-registration
@@ -32,6 +32,6 @@ To the [doc](https://docs.google.com/document/d/1S7nyP9rwfJwY5D7-UHAcCHOuor9c3zC
 
 ### Final Report
 
-The final report contains a lot of details on the rationale behind this replication study and more info on how exactly we conducted the experiment, including data preparation and analysis. It also contains a discussion of our results
+The final report contains a lot of details on the rationale behind this replication study and more info on how exactly we conducted the experiment, including data preparation and analysis. It also contains a discussion of our results.
 
 The report can be found [here](https://docs.google.com/document/d/1hUTgHQijjnyKsgczAsuLZj5T_Y_WvzVF_I2NYsoAy_I/edit?usp=sharing)

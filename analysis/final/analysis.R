@@ -1,4 +1,8 @@
 # Analysis script
+# This script is strongly based on the original script by Pryor et al. (2019).
+# Most modifications have been made for data preparation, further, everything not
+# related to experiment 1 of their original study has been removed.
+# This link leads directly to their repository: https://osf.io/tgf96/
 
 # Initial set-up
 library(ordinal)
@@ -24,7 +28,7 @@ theme_set(theme_bw(18)+
 setwd('/analysis/final')
 
 # Read in data
-full_data <- read.csv('results.csv', sep=';', header=TRUE)
+full_data <- read.csv('/data/results.csv', sep=';', header=TRUE)
 
 # Bring data in usable format
 tidy_data <- full_data %>% 
