@@ -1,0 +1,1 @@
+[A tutorial on bridge sampling](https://www.sciencedirect.com/science/article/pii/S0022249617300640?via%3Dihub)

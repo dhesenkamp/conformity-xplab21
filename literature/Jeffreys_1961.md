@@ -1,0 +1,1 @@
+The theory of probability (3rd ed.), p. 432
